@@ -23,7 +23,7 @@ export default function Home() {
         <AirbnbCalc />
 
         {/* SEO Article Section Below Calculator */}
-        <div className="mt-16 max-w-4xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+        <div className="mt-16 max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Understanding the 15.5% Host-Only Fee</h2>
           <p className="text-gray-600 leading-relaxed mb-4">
             Airbnb has transitioned most professional hosts globally to a 15.5% host-only fee. This means guests no longer see a separate service fee at checkout, which increases booking conversion rates. However, hosts must carefully price their listings to absorb this fee.
