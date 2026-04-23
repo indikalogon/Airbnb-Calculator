@@ -61,7 +61,7 @@ export default function Home() {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
             </Head>
 
-            {/* Navbar - Updated to Rentcalo Theme */}
+            {/* Navbar - Updated with VRBO Calculator Link */}
             <nav className="bg-gray-900 text-white p-4 shadow-md border-b-4 border-blue-500">
                 <div className="container mx-auto flex justify-between items-center max-w-5xl">
                     <Link href="/" className="flex items-center space-x-2">
@@ -69,8 +69,9 @@ export default function Home() {
                         <span className="text-2xl font-bold hover:text-blue-400 transition-colors">Rentcalo</span>
                     </Link>
                     <ul className="hidden md:flex space-x-6">
-                        <li><Link href="/" className="text-blue-400 font-bold">Airbnb Calc</Link></li>
-                        <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com Calc</Link></li>
+                    <li><Link href="/" className="text-blue-400 font-bold">Airbnb Calc</Link></li>
+                    <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com Calc</Link></li>
+                    <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO Calc</Link></li>
                     </ul>
                 </div>
             </nav>
@@ -257,7 +258,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Professional Footer */}
+            {/* Professional Footer - Updated with VRBO Calculator Link */}
             <footer className="bg-gray-900 text-gray-300 py-12 border-t border-gray-800 mt-10">
                 <div className="container mx-auto px-4 max-w-2xl">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
@@ -275,6 +276,7 @@ export default function Home() {
                             <ul className="space-y-2 text-sm">
                                 <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb Calculator</Link></li>
                                 <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com Calculator</Link></li>
+                                <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO Calculator</Link></li>
                             </ul>
                         </div>
                         
