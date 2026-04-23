@@ -57,6 +57,7 @@ export default function Home() {
                 <title>Airbnb Host Fee & Net Payout Calculator 2026 (Auto VAT) | Rentcalo</title>
                 <meta name="description" content="Free Airbnb host fee calculator 2026. Calculate exact net payouts with auto-detected local VAT, property management fees, and the 15.5% simplified pricing model." />
                 <meta name="keywords" content="Airbnb host fee calculator, how much does airbnb charge hosts, airbnb net payout calculator, airbnb property management fee calculator, airbnb simplified pricing, airbnb host tax" />
+                <meta name="google-site-verification" content="1HPgt5oCJPaVXDkCPMtlbyOJjYw-cu1KTLN3jXPH_5E" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
             </Head>
 
