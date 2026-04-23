@@ -4,7 +4,7 @@ import Link from 'next/link';
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-gray-300 py-12 border-t border-gray-800 mt-auto">
-      <div className="container mx-auto px-4 max-w-3xl">
+      <div className="container mx-auto px-4 max-w-2xl">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
           {/* Brand Info */}
           <div>
@@ -32,7 +32,7 @@ const Footer = () => {
             <h4 className="text-white text-lg font-bold mb-4">Legal & Trust</h4>
             <ul className="space-y-2 text-sm">
               <li><Link href="/privacy-policy" className="hover:text-rose-400 transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-rose-400 transition-colors">Terms of Service</Link></li>
+              <li><Link href="/terms-of-service" className="hover:text-rose-400 transition-colors">Terms of Service</Link></li>
               <li><Link href="/about" className="hover:text-rose-400 transition-colors">About Us</Link></li>
               <li><Link href="/contact" className="hover:text-rose-400 transition-colors">Contact Support</Link></li>
             </ul>
