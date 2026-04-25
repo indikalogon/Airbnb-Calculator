@@ -68,9 +68,10 @@ export default function VrboCalculator() {
                         <span className="text-2xl font-bold hover:text-blue-400 transition-colors">Rentcalo</span>
                     </Link>
                     <ul className="hidden md:flex space-x-6">
-                        <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb Calc</Link></li>
-                        <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com Calc</Link></li>
-                        <li><Link href="/vrbo-calculator" className="text-blue-400 font-bold">VRBO Calc</Link></li>
+                        <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb</Link></li>
+                        <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
+                        <li><Link href="/vrbo-calculator" className="text-blue-400 font-bold">VRBO</Link></li>
+                        <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
                     </ul>
                 </div>
             </nav>
@@ -265,9 +266,10 @@ export default function VrboCalculator() {
                         <div>
                             <h4 className="text-white text-lg font-bold mb-4">Calculators</h4>
                             <ul className="space-y-2 text-sm">
-                                <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb Calculator</Link></li>
-                                <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com Calculator</Link></li>
-                                <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">Vrbo Calculator</Link></li>
+                                <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb</Link></li>
+                                <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
+                                <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO</Link></li>
+                                <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
                             </ul>
                         </div>
                         

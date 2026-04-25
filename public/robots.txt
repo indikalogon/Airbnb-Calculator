@@ -1,0 +1,52 @@
+# Allow all standard search engines (Google, Bing, Yahoo, DuckDuckGo)
+User-agent: *
+Allow: /
+
+# ---------------------------------------------------------
+# Block Modern AI Scrapers & LLM Training Bots (2026 Update)
+# ---------------------------------------------------------
+
+# Block Perplexity AI
+User-agent: PerplexityBot
+Disallow: /
+
+# Block OpenAI (ChatGPT & GPT-4 training bots)
+User-agent: GPTBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+
+# Block Google's AI Training (Allows normal Google Search, blocks Bard/Gemini scraping)
+User-agent: Google-Extended
+Disallow: /
+
+# Block Anthropic (Claude)
+User-agent: anthropic-ai
+Disallow: /
+User-agent: Claude-Web
+Disallow: /
+
+# Block Meta / Facebook AI
+User-agent: FacebookBot
+Disallow: /
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+# Block Cohere AI
+User-agent: cohere-ai
+Disallow: /
+
+# Block Common Mass Scrapers & Data Aggregators
+User-agent: CCBot
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: Omgilibot
+Disallow: /
+User-agent: Omgili
+Disallow: /
+User-agent: Diffbot
+Disallow: /
+
+# Point standard bots to the Sitemap for better SEO
+Sitemap: https://rentcalo.com/sitemap.xml

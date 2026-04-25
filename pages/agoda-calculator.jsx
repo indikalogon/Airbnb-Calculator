@@ -2,24 +2,23 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-export default function BookingComCalculator() {
+export default function AgodaCalculator() {
     // React State Variables
     const [nightlyRate, setNightlyRate] = useState(150);
     const [nights, setNights] = useState(3);
     const [cleaningFee, setCleaningFee] = useState(50);
-    const [commissionRate, setCommissionRate] = useState(15);
-    const [paymentFeeRate, setPaymentFeeRate] = useState(1.5);
+    const [commissionRate, setCommissionRate] = useState(15); // Standard Agoda commission
+    const [agodaDiscount, setAgodaDiscount] = useState(0); // VIP / Private Deals
     const [vatPercent, setVatPercent] = useState(0);
     const [taxNote, setTaxNote] = useState({ text: "Detecting your country...", status: "loading" });
 
-    // Database of standard VAT rates
+    // Auto-detect VAT rates based on IP
     const countryTaxRates = {
         "GB": 20, "AU": 10, "DE": 19, "FR": 20, "IT": 22, "ES": 21,
         "ZA": 15, "JP": 10, "CA": 5, "NZ": 15, "CH": 8.1, "LK": 18,
         "IN": 18, "US": 0
     };
 
-    // Auto-detect user location and set VAT
     useEffect(() => {
         async function autoDetectTax() {
             try {
@@ -42,20 +41,26 @@ export default function BookingComCalculator() {
         autoDetectTax();
     }, []);
 
-    // ගණනය කිරීම්
-    const subtotal = nightlyRate * nights;
-    const gross = subtotal + cleaningFee;
-    const commissionAmount = gross * (commissionRate / 100);
-    const paymentFeeAmount = gross * (paymentFeeRate / 100);
+    // ගණනය කිරීම් (Agoda Specific Logic)
+    const baseAccommodation = nightlyRate * nights;
+    
+    // Agoda discounts apply to the accommodation rate, usually not the cleaning fee
+    const discountAmount = baseAccommodation * (agodaDiscount / 100);
+    const discountedAccommodation = baseAccommodation - discountAmount;
+    
+    // Commission is calculated on the discounted rate + cleaning fee
+    const grossSubjectToCommission = discountedAccommodation + cleaningFee;
+    const commissionAmount = grossSubjectToCommission * (commissionRate / 100);
     const vatAmount = commissionAmount * (vatPercent / 100);
-    const net = gross - commissionAmount - paymentFeeAmount - vatAmount;
+    
+    const netPayout = grossSubjectToCommission - commissionAmount - vatAmount;
 
     return (
         <div className="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
             <Head>
-                <title>Booking.com Commission & Rates Calculator 2026 | Rentcalo</title>
-                <meta name="description" content="Free Booking.com fee calculator for US and Canadian hosts. Calculate exact commission rates, payment processing fees, and your true net payout." />
-                <meta name="keywords" content="booking.com commission fee, booking.com commission rates, booking.com fee calculator, booking.com rates calculator, how much commission does booking.com take" />
+                <title>Agoda Host Commission Calculator 2026 (Auto Tax) | Rentcalo</title>
+                <meta name="description" content="Free Agoda host fee calculator. Calculate exact net payouts, Agoda VIP discount impacts, and auto-detected local taxes for your property." />
+                <meta name="keywords" content="agoda host fee calculator, how much commission does agoda take, agoda vip host discount, agoda host payout calculator, agoda host commission 2026" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
             </Head>
 
@@ -67,19 +72,20 @@ export default function BookingComCalculator() {
                         <span className="text-2xl font-bold hover:text-blue-400 transition-colors">Rentcalo</span>
                     </Link>
                     <ul className="hidden md:flex space-x-6">
-                      <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb</Link></li>
-                      <li><Link href="/booking-com-calculator" className="text-blue-400 font-bold">Booking.com</Link></li>
-                      <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO</Link></li>
-                      <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
+                        <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb</Link></li>
+                        <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
+                        <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO</Link></li>
+                        <li><Link href="/agoda-calculator" className="text-blue-400 font-bold">Agoda</Link></li>
                     </ul>
                 </div>
             </nav>
+
             {/* Main Calculator Section */}
             <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-5xl">
                 <div className="text-center mb-10">
                     <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mb-4 inline-block">Updated for 2026</span>
-                    <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Booking.com Commission Calculator</h1>
-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">Calculate your exact net payout by estimating standard commissions, payment processing charges, and taxes.</p>
+                    <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Agoda Host Commission Calculator</h1>
+                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">Stop guessing your margins. Instantly calculate your exact net payout factoring in Agoda's base commission and optional promotional discounts.</p>
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-8">
@@ -110,23 +116,26 @@ export default function BookingComCalculator() {
                             </div>
                         </div>
 
-                        <h3 className="text-xl font-semibold mb-6 border-b pb-2 text-gray-800">Booking.com Fees</h3>
+                        <h3 className="text-xl font-semibold mb-6 border-b pb-2 text-gray-800">Agoda Fees & Promotions</h3>
                         
                         <div className="space-y-5">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700">Commission Rate (%)</label>
                                     <select value={commissionRate} onChange={(e) => setCommissionRate(Number(e.target.value))} className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 cursor-pointer">
-                                        <option value="12">12% (Some regions)</option>
-                                        <option value="15">15% (Standard US/CA Rate)</option>
-                                        <option value="18">18% (Preferred Partner)</option>
-                                        <option value="20">20% (Preferred Plus)</option>
+                                        <option value="15">15% (Standard Rate)</option>
+                                        <option value="17">17% (Preferred Program)</option>
+                                        <option value="20">20% (Premium Visibility)</option>
                                     </select>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700">Payment Processing Fee (%)</label>
-                                    <input type="number" value={paymentFeeRate} onChange={(e) => setPaymentFeeRate(Number(e.target.value) || 0)} min="0" step="0.1" className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 transition-colors" />
-                                    <p className="text-xs text-gray-400 mt-1">Usually 1.1% to 3.1%</p>
+                                    <label className="block text-sm font-medium text-gray-700">Agoda Discounts (%)</label>
+                                    <select value={agodaDiscount} onChange={(e) => setAgodaDiscount(Number(e.target.value))} className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 cursor-pointer">
+                                        <option value="0">0% (No Promotions)</option>
+                                        <option value="10">10% (Agoda VIP / Private Sale)</option>
+                                        <option value="15">15% (Mega Deals)</option>
+                                        <option value="20">20% (Last Minute Drop)</option>
+                                    </select>
                                 </div>
                             </div>
                             
@@ -151,9 +160,17 @@ export default function BookingComCalculator() {
                             
                             <div className="space-y-4 text-sm md:text-base">
                                 <div className="flex justify-between items-center text-gray-400">
-                                    <span>Accommodation ({nights} nights)</span>
-                                    <span>${subtotal.toFixed(2)}</span>
+                                    <span>Base Accommodation</span>
+                                    <span>${baseAccommodation.toFixed(2)}</span>
                                 </div>
+                                
+                                {agodaDiscount > 0 && (
+                                    <div className="flex justify-between items-center text-purple-400">
+                                        <span>Promo Discount ({agodaDiscount}%)</span>
+                                        <span>-${discountAmount.toFixed(2)}</span>
+                                    </div>
+                                )}
+
                                 <div className="flex justify-between items-center text-gray-400">
                                     <span>Cleaning Fee</span>
                                     <span>${cleaningFee.toFixed(2)}</span>
@@ -161,20 +178,13 @@ export default function BookingComCalculator() {
                                 
                                 <div className="flex justify-between items-center text-gray-200 border-t border-gray-700 pt-3 pb-1 font-medium text-lg">
                                     <span>Gross Booking Value</span>
-                                    <span>${gross.toFixed(2)}</span>
+                                    <span>${grossSubjectToCommission.toFixed(2)}</span>
                                 </div>
                                 
                                 <div className="flex justify-between items-center text-red-400 mt-4">
-                                    <span>Commission ({commissionRate}%)</span>
+                                    <span>Agoda Commission ({commissionRate}%)</span>
                                     <span>-${commissionAmount.toFixed(2)}</span>
                                 </div>
-
-                                {paymentFeeAmount > 0 && (
-                                    <div className="flex justify-between items-center text-orange-300">
-                                        <span>Payment Fee ({paymentFeeRate}%)</span>
-                                        <span>-${paymentFeeAmount.toFixed(2)}</span>
-                                    </div>
-                                )}
                                 
                                 {vatPercent > 0 && (
                                     <div className="flex justify-between items-center text-yellow-300">
@@ -187,7 +197,7 @@ export default function BookingComCalculator() {
                                 
                                 <div className="flex justify-between items-center">
                                     <span className="text-xl font-bold">Total Net Payout</span>
-                                    <span className="text-4xl font-extrabold text-green-400">${net.toFixed(2)}</span>
+                                    <span className="text-4xl font-extrabold text-green-400">${netPayout.toFixed(2)}</span>
                                 </div>
                             </div>
                         </div>
@@ -195,10 +205,10 @@ export default function BookingComCalculator() {
                         {/* Expert Host Tip Section */}
                         <div className="bg-blue-50 p-6 rounded-2xl shadow-sm border border-blue-100 mt-2">
                             <h4 className="font-bold text-blue-900 mb-2">
-                                <i className="fa-solid fa-lightbulb text-yellow-500 mr-2"></i>Expert Host Tip
+                                <i className="fa-solid fa-lightbulb text-yellow-500 mr-2"></i>Pricing Strategy Tip
                             </h4>
                             <p className="text-sm text-blue-800 leading-relaxed">
-                                Be cautious with Booking.com's <strong>Genius Program</strong> and <strong>Mobile Rates</strong>. While they significantly boost your visibility, these promotions stack discounts (e.g., 10% Genius + 10% Mobile) <em>before</em> the 15% commission is applied. Ensure your base rate is high enough to absorb a combined 25-30% deduction without ruining your profit margins.
+                                Agoda generates massive traffic through their <strong>"Agoda VIP"</strong> and <strong>"Private Sale"</strong> channels. If you opt into a 10% discount, remember that this cuts into your gross rate <em>before</em> the 15% commission is applied. Use this tool to artificially increase your base nightly rate to safely absorb these promotional discounts.
                             </p>
                         </div>
                     </div>
@@ -208,42 +218,45 @@ export default function BookingComCalculator() {
             {/* SEO Content Section */}
             <section id="how-it-works" className="bg-white py-16 border-t border-gray-200 mt-8">
                 <div className="container mx-auto px-4 max-w-4xl">
-                    <h2 className="text-3xl font-bold mb-6 text-gray-900">How to Calculate Booking.com Commission Rates in 2026</h2>
+                    <h2 className="text-3xl font-bold mb-6 text-gray-900">How to Calculate Agoda Host Commission in 2026</h2>
                     
                     <div className="prose prose-lg text-gray-700 max-w-none">
                         <p className="mb-6 leading-relaxed">
-                            If you manage vacation rentals in the US or Canada, understanding your exact <strong>Booking.com commission fee</strong> is essential to maintaining your profit margins. Unlike other online travel agencies (OTAs) that split costs with guests, Booking.com uses a straightforward host-pays model. 
+                            Agoda is rapidly expanding from its Asian stronghold into the North American and European vacation rental markets. However, a common question among property managers transitioning from Airbnb is: <em>"How much commission does Agoda actually take?"</em> 
                         </p>
                         <p className="mb-6 leading-relaxed">
-                            A frequent question among new property managers is: <em>"How much commission does Booking.com take from hosts?"</em> For most hosts in North America, the standard <strong>Booking.com commission rate</strong> sits at 15%. However, this can increase to 18% or even 20% if you choose to participate in premium visibility programs like the Preferred Partner program.
-                        </p>
-
-                        <h3 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">Gross Value vs. Nightly Rate</h3>
-                        <p className="mb-6 leading-relaxed">
-                            It is crucial to understand that this commission is calculated on the <strong>Gross Booking Value</strong>. This means the deduction applies to your base nightly rate <em>plus</em> any additional mandatory fees you charge the guest, such as cleaning fees or pet fees. This is a common pitfall. Using a reliable <strong>Booking.com fee calculator</strong> helps you appropriately markup your cleaning fees to avoid taking a loss.
+                            Agoda's fee structure is often considered more aggressive than its competitors because it heavily relies on layered promotional discounts. Understanding exactly how these discounts interact with your base commission is crucial to maintaining profitability.
                         </p>
 
-                        <h3 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">Payments by Booking.com Processing Fees</h3>
+                        <h3 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">The Base Commission Rate</h3>
                         <p className="mb-6 leading-relaxed">
-                            In addition to the base commission, the method you use to collect guest payments affects your bottom line. If you utilize the "Payments by Booking.com" service to securely process guest credit cards—a highly recommended strategy in the US and Canada to reduce fraud—there is typically an additional payment processing fee. This fee generally ranges from 1.1% to 3.1% per transaction, depending on the guest's payment method and your specific region.
+                            For most independent vacation rental hosts, the standard <strong>Agoda commission rate is 15%</strong>. Similar to Booking.com, this commission is calculated on the Gross Booking Value, which means it applies to both your nightly rate and any mandatory extra charges like cleaning fees.
+                        </p>
+
+                        <h3 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">The Impact of Agoda VIP & Mega Deals</h3>
+                        <p className="mb-6 leading-relaxed">
+                            What sets Agoda apart is its algorithm's preference for discounted listings. Hosts are frequently encouraged to opt into programs like <em>Agoda VIP</em>, <em>Private Sales</em>, or <em>Mega Deals</em>, offering 10% to 20% off their standard rates to gain visibility. 
+                        </p>
+                        <p className="mb-6 leading-relaxed">
+                            <strong>The crucial math:</strong> If you offer a 10% Agoda VIP discount, that 10% is deducted from your base rate first. Then, the 15% commission is taken from that newly reduced number. Our <strong>Agoda host payout calculator</strong> automates this multi-step deduction, showing you the exact dollar amount you will receive.
                         </p>
 
                         <h3 className="text-2xl font-semibold mt-10 mb-4 text-gray-800" id="faq">Frequently Asked Questions (FAQ)</h3>
                         
                         <div className="space-y-6">
                             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
-                                <h4 className="text-lg font-bold text-gray-900 mb-2">Does Booking.com charge commission on cleaning fees?</h4>
-                                <p className="text-gray-600">Yes. The <strong>Booking.com commission rate</strong> is applied to the total amount the guest pays. This explicitly includes your cleaning fee and any other mandatory extra charges. It typically excludes local occupancy taxes.</p>
+                                <h4 className="text-lg font-bold text-gray-900 mb-2">Does Agoda charge payment processing fees?</h4>
+                                <p className="text-gray-600">If you use the "Agoda Collect" model (where Agoda handles the guest's credit card and pays you via Virtual Credit Card or Bank Transfer), the 15% commission typically covers the transaction. However, Virtual Credit Cards (ePass) may incur your bank's standard merchant processing fees when you swipe them.</p>
                             </div>
 
                             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
-                                <h4 className="text-lg font-bold text-gray-900 mb-2">What is the standard Booking.com payment processing fee?</h4>
-                                <p className="text-gray-600">If you use their centralized payment system, expect a processing fee of around 1.1% to 3.1%. If you choose to process your own payments via a third-party merchant account like Stripe, you will pay their standard credit card processing rates instead.</p>
+                                <h4 className="text-lg font-bold text-gray-900 mb-2">Can Agoda lower my price without my permission?</h4>
+                                <p className="text-gray-600">Yes, this is known as Agoda's "Price Match" or "Host-funded discounts." Sometimes Agoda will cut into their own 15% commission margin to offer the guest a cheaper rate than what is displayed on Booking.com. This does not affect your net payout, but it can cause rate parity issues if you use a channel manager.</p>
                             </div>
 
                             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
-                                <h4 className="text-lg font-bold text-gray-900 mb-2">Are Booking.com commission rates negotiable?</h4>
-                                <p className="text-gray-600">Generally, no. The base rate of 15% is standard for independent vacation rental hosts and boutique hotels. Typically, only massive global hotel brands have the leverage to negotiate lower commission tiers.</p>
+                                <h4 className="text-lg font-bold text-gray-900 mb-2">Should I opt into the Agoda Preferred Partner program?</h4>
+                                <p className="text-gray-600">Joining the Preferred program usually raises your commission rate from 15% to 17% in exchange for a special badge and higher search ranking. Use our calculator to determine if the expected increase in booking volume justifies the 2% loss in margin.</p>
                             </div>
                         </div>
                     </div>
@@ -259,7 +272,7 @@ export default function BookingComCalculator() {
                                 <i className="fa-solid fa-building mr-2 text-blue-500"></i>Rentcalo
                             </h4>
                             <p className="text-sm text-gray-400 leading-relaxed pr-4">
-                                Providing professional tools and exact fee calculations for Airbnb hosts, property managers, and short-term rental investors worldwide.
+                                Providing professional tools and exact fee calculations for vacation rental investors worldwide.
                             </p>
                         </div>
                         
@@ -284,7 +297,7 @@ export default function BookingComCalculator() {
                         </div>
                     </div>
                     <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
-                        <p>&copy; {new Date().getFullYear()} Rentcalo. All rights reserved. Not affiliated with Booking.com or Airbnb, Inc.</p>
+                        <p>&copy; {new Date().getFullYear()} Rentcalo. All rights reserved. Not affiliated with Agoda Company Pte. Ltd.</p>
                     </div>
                 </div>
             </footer>

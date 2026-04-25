@@ -69,9 +69,10 @@ export default function Home() {
                         <span className="text-2xl font-bold hover:text-blue-400 transition-colors">Rentcalo</span>
                     </Link>
                     <ul className="hidden md:flex space-x-6">
-                    <li><Link href="/" className="text-blue-400 font-bold">Airbnb Calc</Link></li>
-                    <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com Calc</Link></li>
-                    <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO Calc</Link></li>
+                      <li><Link href="/" className="text-blue-400 font-bold">Airbnb</Link></li>
+                      <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
+                      <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO</Link></li>
+                      <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
                     </ul>
                 </div>
             </nav>
@@ -260,7 +261,7 @@ export default function Home() {
 
             {/* Professional Footer - Updated with VRBO Calculator Link */}
             <footer className="bg-gray-900 text-gray-300 py-12 border-t border-gray-800 mt-10">
-                <div className="container mx-auto px-4 max-w-2xl">
+                <div className="container mx-auto px-4 max-w-xl">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                         <div>
                             <h4 className="text-white text-xl font-bold mb-4">
@@ -274,9 +275,10 @@ export default function Home() {
                         <div>
                             <h4 className="text-white text-lg font-bold mb-4">Calculators</h4>
                             <ul className="space-y-2 text-sm">
-                                <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb Calculator</Link></li>
-                                <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com Calculator</Link></li>
-                                <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO Calculator</Link></li>
+                                <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb</Link></li>
+                                <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
+                                <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO</Link></li>
+                                <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
                             </ul>
                         </div>
                         
