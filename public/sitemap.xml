@@ -14,10 +14,9 @@
     <loc>https://rentcalo.com/vrbo-calculator</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <url>
+  <url>
     <loc>https://rentcalo.com/agoda-calculator</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
   </url>
 </urlset>
