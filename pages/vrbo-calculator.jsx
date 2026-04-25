@@ -284,7 +284,7 @@ export default function VrboCalculator() {
                         </div>
                     </div>
                     <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
-                        <p>&copy; {new Date().getFullYear()} Rentcalo. All rights reserved. Not affiliated with Expedia Group or Vrbo.</p>
+                        <p>&copy; {new Date().getFullYear()} Rentcalo. All rights reserved. Not affiliated with Airbnb, Booking.com, VRBO, or Agoda.</p>
                     </div>
                 </div>
             </footer>

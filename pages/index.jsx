@@ -58,10 +58,25 @@ export default function Home() {
                 <meta name="description" content="Free Airbnb host fee calculator 2026. Calculate exact net payouts with auto-detected local VAT, property management fees, and the 15.5% simplified pricing model." />
                 <meta name="keywords" content="Airbnb host fee calculator, how much does airbnb charge hosts, airbnb net payout calculator, airbnb property management fee calculator, airbnb simplified pricing, airbnb host tax" />
                 <meta name="google-site-verification" content="1HPgt5oCJPaVXDkCPMtlbyOJjYw-cu1KTLN3jXPH_5E" />
+                
+                {/* Open Graph / Facebook / WhatsApp */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://rentcalo.com/" />
+                <meta property="og:title" content="Airbnb Host Fee & Net Payout Calculator 2026 | Rentcalo" />
+                <meta property="og:description" content="Stop losing money to hidden fees. Calculate exact net payouts for Airbnb, Booking.com, VRBO, and Agoda hosts." />
+                <meta property="og:image" content="https://rentcalo.com/og-image.jpg" />
+
+                {/* Twitter / X */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:url" content="https://rentcalo.com/" />
+                <meta name="twitter:title" content="Airbnb Host Fee & Net Payout Calculator 2026 | Rentcalo" />
+                <meta name="twitter:description" content="Stop losing money to hidden fees. Calculate exact net payouts for Airbnb, Booking.com, VRBO, and Agoda hosts." />
+                <meta name="twitter:image" content="https://rentcalo.com/og-image.jpg" />
+
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
             </Head>
 
-            {/* Navbar - Updated with VRBO Calculator Link */}
+            {/* Navbar */}
             <nav className="bg-gray-900 text-white p-4 shadow-md border-b-4 border-blue-500">
                 <div className="container mx-auto flex justify-between items-center max-w-5xl">
                     <Link href="/" className="flex items-center space-x-2">
@@ -69,10 +84,10 @@ export default function Home() {
                         <span className="text-2xl font-bold hover:text-blue-400 transition-colors">Rentcalo</span>
                     </Link>
                     <ul className="hidden md:flex space-x-6">
-                      <li><Link href="/" className="text-blue-400 font-bold">Airbnb</Link></li>
-                      <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
-                      <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO</Link></li>
-                      <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
+                        <li><Link href="/" className="text-blue-400 font-bold">Airbnb</Link></li>
+                        <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
+                        <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO</Link></li>
+                        <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
                     </ul>
                 </div>
             </nav>
@@ -87,45 +102,48 @@ export default function Home() {
                 <div className="flex flex-col lg:flex-row gap-8">
                     {/* Left Column: Inputs */}
                     <div className="bg-white p-8 rounded-2xl shadow-lg w-full lg:w-7/12 border border-gray-100">
-                        <h3 className="text-2xl font-semibold mb-6 border-b pb-2 text-gray-800">Booking Details</h3>
+                        {/* SEO Fix: Changed h3 to h2 */}
+                        <h2 className="text-2xl font-semibold mb-6 border-b pb-2 text-gray-800">Booking Details</h2>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Nightly Rate ($)</label>
+                                {/* Accessibility Fix: Added htmlFor and id */}
+                                <label htmlFor="nightlyRate" className="block text-sm font-medium text-gray-700">Nightly Rate ($)</label>
                                 <div className="relative mt-1">
                                     <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">$</span>
-                                    <input type="number" value={nightlyRate} onChange={(e) => setNightlyRate(Number(e.target.value) || 0)} min="0" className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
+                                    <input id="nightlyRate" type="number" value={nightlyRate} onChange={(e) => setNightlyRate(Number(e.target.value) || 0)} min="0" className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
                                 </div>
                             </div>
                             
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Number of Nights</label>
-                                <input type="number" value={nights} onChange={(e) => setNights(Number(e.target.value) || 0)} min="1" className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
+                                <label htmlFor="nights" className="block text-sm font-medium text-gray-700">Number of Nights</label>
+                                <input id="nights" type="number" value={nights} onChange={(e) => setNights(Number(e.target.value) || 0)} min="1" className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Cleaning Fee ($)</label>
+                                <label htmlFor="cleaningFee" className="block text-sm font-medium text-gray-700">Cleaning Fee ($)</label>
                                 <div className="relative mt-1">
                                     <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">$</span>
-                                    <input type="number" value={cleaningFee} onChange={(e) => setCleaningFee(Number(e.target.value) || 0)} min="0" className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
+                                    <input id="cleaningFee" type="number" value={cleaningFee} onChange={(e) => setCleaningFee(Number(e.target.value) || 0)} min="0" className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
                                 </div>
                             </div>
 
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Extra Guest Fees ($)</label>
+                                <label htmlFor="extraGuestFee" className="block text-sm font-medium text-gray-700">Extra Guest Fees ($)</label>
                                 <div className="relative mt-1">
                                     <span className="absolute inset-y-0 left-0 pl-3 flex items-center text-gray-500">$</span>
-                                    <input type="number" value={extraGuestFee} onChange={(e) => setExtraGuestFee(Number(e.target.value) || 0)} min="0" className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
+                                    <input id="extraGuestFee" type="number" value={extraGuestFee} onChange={(e) => setExtraGuestFee(Number(e.target.value) || 0)} min="0" className="w-full pl-8 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
                                 </div>
                             </div>
                         </div>
 
-                        <h3 className="text-xl font-semibold mb-6 border-b pb-2 text-gray-800">Advanced Fee Settings</h3>
+                        {/* SEO Fix: Changed h3 to h2 */}
+                        <h2 className="text-xl font-semibold mb-6 border-b pb-2 text-gray-800">Advanced Fee Settings</h2>
                         
                         <div className="space-y-5">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Airbnb Service Fee Structure</label>
-                                <select value={policyRate} onChange={(e) => setPolicyRate(Number(e.target.value))} className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white cursor-pointer transition-colors">
+                                <label htmlFor="policyRate" className="block text-sm font-medium text-gray-700">Airbnb Service Fee Structure</label>
+                                <select id="policyRate" value={policyRate} onChange={(e) => setPolicyRate(Number(e.target.value))} className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white cursor-pointer transition-colors">
                                     <option value="0.03">Split-Fee Model (Standard 3%)</option>
                                     <option value="0.155">Host-Only / Strict Policy (15.5% Fee)</option>
                                     <option value="0.16">Listings in Brazil (16.0% Fee)</option>
@@ -135,14 +153,16 @@ export default function Home() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700">Property Management Fee (%)</label>
-                                    <input type="number" value={mgmtFeePercent} onChange={(e) => setMgmtFeePercent(Number(e.target.value) || 0)} min="0" step="0.1" className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
-                                    <p className="text-xs text-gray-400 mt-1">Calculated on Gross Value</p>
+                                    <label htmlFor="mgmtFeePercent" className="block text-sm font-medium text-gray-700">Property Management Fee (%)</label>
+                                    <input id="mgmtFeePercent" type="number" value={mgmtFeePercent} onChange={(e) => setMgmtFeePercent(Number(e.target.value) || 0)} min="0" step="0.1" className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
+                                    {/* Contrast Fix: text-gray-500 instead of 400 */}
+                                    <p className="text-xs text-gray-500 mt-1">Calculated on Gross Value</p>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700">VAT / Local Tax on Airbnb Fee (%)</label>
-                                    <input type="number" value={vatPercent} onChange={(e) => setVatPercent(Number(e.target.value) || 0)} min="0" step="0.1" className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
-                                    <p className={`text-xs mt-1 font-medium ${taxNote.status === 'success' ? 'text-green-600' : taxNote.status === 'loading' ? 'text-blue-500' : 'text-gray-400'}`}>
+                                    <label htmlFor="vatPercent" className="block text-sm font-medium text-gray-700">VAT / Local Tax on Airbnb Fee (%)</label>
+                                    <input id="vatPercent" type="number" value={vatPercent} onChange={(e) => setVatPercent(Number(e.target.value) || 0)} min="0" step="0.1" className="w-full mt-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 text-lg bg-gray-50 focus:bg-white transition-colors" />
+                                    {/* Contrast Fix: text-green-700 instead of 600 */}
+                                    <p className={`text-xs mt-1 font-medium ${taxNote.status === 'success' ? 'text-green-700' : taxNote.status === 'loading' ? 'text-blue-600' : 'text-gray-500'}`}>
                                         {taxNote.status === 'loading' && <i className="fa-solid fa-spinner fa-spin mr-1"></i>}
                                         {taxNote.status === 'success' && <i className="fa-solid fa-check-circle mr-1"></i>}
                                         {taxNote.text}
@@ -156,7 +176,7 @@ export default function Home() {
                     <div className="w-full lg:w-5/12 flex flex-col gap-6">
                         <div className="bg-gray-900 text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
                             <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-500 rounded-full opacity-20 blur-2xl"></div>
-                            <h3 className="text-2xl font-semibold mb-6">Your Earnings Summary</h3>
+                            <h2 className="text-2xl font-semibold mb-6">Your Earnings Summary</h2>
                             
                             <div className="space-y-4 text-sm md:text-base">
                                 <div className="flex justify-between items-center text-gray-400">
@@ -259,20 +279,21 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Professional Footer - Updated with VRBO Calculator Link */}
+            {/* Completely Fixed Footer - Centered for Mobile & Desktop */}
             <footer className="bg-gray-900 text-gray-300 py-12 border-t border-gray-800 mt-10">
-                <div className="container mx-auto px-4 max-w-xl">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                        <div>
-                            <h4 className="text-white text-xl font-bold mb-4">
+                {/* Footer Fix: max-w-5xl instead of max-w-xl */}
+                <div className="container mx-auto px-4 max-w-2xl">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+                        <div className="flex flex-col items-center md:items-start">
+                            <h4 className="text-white text-xl font-bold mb-4 flex items-center">
                                 <i className="fa-solid fa-building mr-2 text-blue-500"></i>Rentcalo
                             </h4>
-                            <p className="text-sm text-gray-400 leading-relaxed pr-4">
-                                Providing professional tools and exact fee calculations for Airbnb hosts, property managers, and short-term rental investors worldwide.
+                            <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
+                                Providing professional tools and exact fee calculations for vacation rental investors worldwide.
                             </p>
                         </div>
                         
-                        <div>
+                        <div className="flex flex-col items-center md:items-start">
                             <h4 className="text-white text-lg font-bold mb-4">Calculators</h4>
                             <ul className="space-y-2 text-sm">
                                 <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb</Link></li>
@@ -282,7 +303,7 @@ export default function Home() {
                             </ul>
                         </div>
                         
-                        <div>
+                        <div className="flex flex-col items-center md:items-start">
                             <h4 className="text-white text-lg font-bold mb-4">Legal & Trust</h4>
                             <ul className="space-y-2 text-sm">
                                 <li><Link href="/privacy-policy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link></li>
@@ -292,8 +313,9 @@ export default function Home() {
                             </ul>
                         </div>
                     </div>
-                    <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-500">
-                        <p>&copy; {new Date().getFullYear()} Rentcalo. All rights reserved. Not affiliated with Airbnb, Inc.</p>
+                    {/* Contrast Fix: text-gray-400 instead of 500 */}
+                    <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+                        <p>&copy; {new Date().getFullYear()} Rentcalo. All rights reserved. Not affiliated with Airbnb, Booking.com, VRBO, or Agoda.</p>
                     </div>
                 </div>
             </footer>
