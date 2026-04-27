@@ -72,6 +72,7 @@ export default function VrboCalculator() {
                         <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
                         <li><Link href="/vrbo-calculator" className="text-blue-400 font-bold">VRBO</Link></li>
                         <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
+                        <li><Link href="/airbnb-arbitrage-calculator" className="hover:text-blue-400 transition-colors">Arbitrage / ROI</Link></li>
                     </ul>
                 </div>
             </nav>
@@ -270,6 +271,7 @@ export default function VrboCalculator() {
                                 <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
                                 <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO</Link></li>
                                 <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
+                                <li><Link href="/airbnb-arbitrage-calculator" className="hover:text-blue-400 font-bold transition-colors">Arbitrage / ROI</Link></li>
                             </ul>
                         </div>
                         
