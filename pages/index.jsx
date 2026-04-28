@@ -58,6 +58,7 @@ export default function Home() {
                 <meta name="description" content="Free Airbnb host fee calculator 2026. Calculate exact net payouts with auto-detected local VAT, property management fees, and the 15.5% simplified pricing model." />
                 <meta name="keywords" content="Airbnb host fee calculator, how much does airbnb charge hosts, airbnb net payout calculator, airbnb property management fee calculator, airbnb simplified pricing, airbnb host tax" />
                 <meta name="google-site-verification" content="1HPgt5oCJPaVXDkCPMtlbyOJjYw-cu1KTLN3jXPH_5E" />
+                <link rel="canonical" href="https://rentcalo.com/index" />
                 
                 {/* Open Graph / Facebook / WhatsApp */}
                 <meta property="og:type" content="website" />
@@ -75,24 +76,6 @@ export default function Home() {
 
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
             </Head>
-
-            {/* Navbar */}
-            <nav className="bg-gray-900 text-white p-4 shadow-md border-b-4 border-blue-500">
-                <div className="container mx-auto flex justify-between items-center max-w-5xl">
-                    <Link href="/" className="flex items-center space-x-2">
-                        <i className="fa-solid fa-building text-blue-400 text-2xl"></i>
-                        <span className="text-2xl font-bold hover:text-blue-400 transition-colors">Rentcalo</span>
-                    </Link>
-                    <ul className="hidden md:flex space-x-6">
-                        <li><Link href="/" className="text-blue-400 font-bold">Airbnb</Link></li>
-                        <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
-                        <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO</Link></li>
-                        <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
-                        <li><Link href="/airbnb-arbitrage-calculator" className="hover:text-blue-400 transition-colors">Arbitrage / ROI</Link></li>
-                    </ul>
-                </div>
-            </nav>
-
             {/* Main Calculator Section */}
             <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-5xl">
                 <div className="text-center mb-10">
@@ -279,48 +262,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
-            {/* Completely Fixed Footer - Centered for Mobile & Desktop */}
-            <footer className="bg-gray-900 text-gray-300 py-12 border-t border-gray-800 mt-10">
-                {/* Footer Fix: max-w-5xl instead of max-w-xl */}
-                <div className="container mx-auto px-4 max-w-2xl">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
-                        <div className="flex flex-col items-center md:items-start">
-                            <h4 className="text-white text-xl font-bold mb-4 flex items-center">
-                                <i className="fa-solid fa-building mr-2 text-blue-500"></i>Rentcalo
-                            </h4>
-                            <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
-                                Providing professional tools and exact fee calculations for vacation rental investors worldwide.
-                            </p>
-                        </div>
-                        
-                        <div className="flex flex-col items-center md:items-start">
-                            <h4 className="text-white text-lg font-bold mb-4">Calculators</h4>
-                            <ul className="space-y-2 text-sm">
-                                <li><Link href="/" className="hover:text-blue-400 transition-colors">Airbnb</Link></li>
-                                <li><Link href="/booking-com-calculator" className="hover:text-blue-400 transition-colors">Booking.com</Link></li>
-                                <li><Link href="/vrbo-calculator" className="hover:text-blue-400 transition-colors">VRBO</Link></li>
-                                <li><Link href="/agoda-calculator" className="hover:text-blue-400 transition-colors">Agoda</Link></li>
-                                <li><Link href="/airbnb-arbitrage-calculator" className="hover:text-blue-400 font-bold transition-colors">Arbitrage / ROI</Link></li>
-                            </ul>
-                        </div>
-                        
-                        <div className="flex flex-col items-center md:items-start">
-                            <h4 className="text-white text-lg font-bold mb-4">Legal & Trust</h4>
-                            <ul className="space-y-2 text-sm">
-                                <li><Link href="/privacy-policy" className="hover:text-blue-400 transition-colors">Privacy Policy</Link></li>
-                                <li><Link href="/terms-of-service" className="hover:text-blue-400 transition-colors">Terms of Service</Link></li>
-                                <li><Link href="/about" className="hover:text-blue-400 transition-colors">About Us</Link></li>
-                                <li><Link href="/contact" className="hover:text-blue-400 transition-colors">Contact Support</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                    {/* Contrast Fix: text-gray-400 instead of 500 */}
-                    <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
-                        <p>&copy; {new Date().getFullYear()} Rentcalo. All rights reserved. Not affiliated with Airbnb, Booking.com, VRBO, or Agoda.</p>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
 }

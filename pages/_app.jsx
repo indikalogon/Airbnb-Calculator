@@ -1,5 +1,6 @@
 import '../styles/globals.css';
 import Script from 'next/script'; 
+import Layout from '../components/Layout'; // 1. අලුත් Layout එක ගෙන්වා ගැනීම
 
 export default function App({ Component, pageProps }) {
   // ඔබගේ සැබෑ Measurement ID එක
@@ -33,7 +34,11 @@ export default function App({ Component, pageProps }) {
           scroll-behavior: smooth;
         }
       `}</style>
-      <Component {...pageProps} />
+
+      {/* 2. අලුත් Layout එකෙන් මුළු වෙබ් අඩවියේම පිටු ආවරණය කිරීම */}
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 }
