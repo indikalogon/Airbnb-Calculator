@@ -2,7 +2,7 @@
 title: "Airbnb Arbitrage vs. Glamping: Which Short-Term Rental Strategy Wins in 2026?"
 date: "2026-04-29"
 excerpt: "Discover the most profitable short-term rental strategies for 2026. Compare startup costs, CapEx, and ROI between urban rental arbitrage and off-grid glamping resorts."
-coverImage: "/images/blog/arbitrage-vs-glamping.jpg"
+coverImage: "https://images.unsplash.com/photo-1648326342761-8a9abfb7a2c0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 author: "Rentcalo Research Team"
 ---
 

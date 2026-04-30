@@ -8,7 +8,7 @@ export default function TermsOfService() {
             <Head>
                 <title>Terms of Service | Rentcalo</title>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-                <link rel="canonical" href="https://rentcalo.com/terms-of-service" />
+                <link rel="canonical" href="https://www.rentcalo.com/terms-of-service" />
             </Head>
 
             <main className="flex-grow container mx-auto px-4 py-12 max-w-5xl">

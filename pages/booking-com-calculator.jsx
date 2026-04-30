@@ -57,7 +57,7 @@ export default function BookingComCalculator() {
                 <meta name="description" content="Free Booking.com fee calculator for US and Canadian hosts. Calculate exact commission rates, payment processing fees, and your true net payout." />
                 <meta name="keywords" content="booking.com commission fee, booking.com commission rates, booking.com fee calculator, booking.com rates calculator, how much commission does booking.com take" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-                <link rel="canonical" href="https://rentcalo.com/booking-com-calculator" />
+                <link rel="canonical" href="https://www.rentcalo.com/booking-com-calculator" />
             </Head>
 
             {/* Main Calculator Section */}

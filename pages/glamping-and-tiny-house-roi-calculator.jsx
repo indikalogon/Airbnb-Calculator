@@ -58,7 +58,7 @@ export default function GlampingROISimulator() {
             <Head>
                 <title>Glamping & Tiny House ROI Calculator 2026 | Rentcalo</title>
                 <meta name="description" content="Calculate your total startup costs, off-grid expenses, and ROI for Geodesic Domes, Safari Tents, and Tiny Houses with our free Glamping Simulator." />
-                <link rel="canonical" href="https://rentcalo.com/glamping-and-tiny-house-roi-calculator" />
+                <link rel="canonical" href="https://www.rentcalo.com/glamping-and-tiny-house-roi-calculator" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
             </Head>
 

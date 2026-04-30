@@ -50,7 +50,7 @@ export default function AirbnbArbitrageCalculator() {
                 <meta name="description" content="Free Airbnb Arbitrage Calculator. Instantly calculate your short-term rental ROI, cash-on-cash return, startup costs, and monthly net profit." />
                 <meta name="keywords" content="airbnb arbitrage calculator, short term rental roi calculator, how to calculate roi on airbnb, rental arbitrage profit margin, cash on cash return real estate calculator" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-                <link rel="canonical" href="https://rentcalo.com/airbnb-arbitrage-calculator" />
+                <link rel="canonical" href="https://www.rentcalo.com/airbnb-arbitrage-calculator" />
             </Head>
 
             {/* Main Calculator Interface */}

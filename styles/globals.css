@@ -1,1 +1,13 @@
 @import "tailwindcss";
+/* Blog Post Images Styling */
+.blog-content img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 0.75rem; /* ලස්සනට වටේ රවුම් වීමට */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); /* මෘදු සෙවණැල්ලක් */
+    max-height: 500px; /* පින්තූරය අනවශ්‍ය ලෙස ලොකු වීම වැළැක්වීමට */
+    object-fit: cover;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

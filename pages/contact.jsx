@@ -8,7 +8,7 @@ export default function Contact() {
             <Head>
                 <title>Contact Support | Rentcalo</title>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-                <link rel="canonical" href="https://rentcalo.com/contact" />
+                <link rel="canonical" href="https://www.rentcalo.com/contact" />
             </Head>
 
             <main className="flex-grow container mx-auto px-4 py-12 max-w-5xl">

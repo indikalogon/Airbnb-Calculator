@@ -58,7 +58,7 @@ export default function VrboCalculator() {
                 <meta name="description" content="Free Vrbo host fee calculator 2026. Calculate exact 5% commission, 3% payment processing fees, and auto-detected local taxes for your true net payout." />
                 <meta name="keywords" content="vrbo host fee calculator, how much does vrbo charge hosts, vrbo commission rate, vrbo pay per booking fee, vrbo vs airbnb fees, vrbo calculator" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-                <link rel="canonical" href="https://rentcalo.com/vrbo-calculator" />
+                <link rel="canonical" href="https://www.rentcalo.com/vrbo-calculator" />
             </Head>
 
             {/* Main Calculator Section */}

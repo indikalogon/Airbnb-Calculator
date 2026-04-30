@@ -62,7 +62,7 @@ export default function AgodaCalculator() {
                 <meta name="description" content="Free Agoda host fee calculator. Calculate exact net payouts, Agoda VIP discount impacts, and auto-detected local taxes for your property." />
                 <meta name="keywords" content="agoda host fee calculator, how much commission does agoda take, agoda vip host discount, agoda host payout calculator, agoda host commission 2026" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-                <link rel="canonical" href="https://rentcalo.com/agoda-calculator" />
+                <link rel="canonical" href="https://www.rentcalo.com/agoda-calculator" />
             </Head>
 
             {/* Main Calculator Section */}
