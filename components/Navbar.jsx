@@ -42,6 +42,7 @@ export default function Navbar() {
                     <li><Link href="/agoda-calculator" className={navLinkClass('/agoda-calculator')}>Agoda</Link></li>
                     <li><Link href="/airbnb-arbitrage-calculator" className={navLinkClass('/airbnb-arbitrage-calculator')}>Arbitrage / ROI</Link></li>
                     <li><Link href="/glamping-and-tiny-house-roi-calculator" className={navLinkClass('/glamping-and-tiny-house-roi-calculator')}>Glamping</Link></li>
+                    <li><Link href="/str-vs-ltr-calculator" className={navLinkClass('/str-vs-ltr-calculator')}>STR vs LTR</Link></li>
                     
                     {/* Beautiful Blog Button */}
                     <li className="pl-2 border-l border-gray-700">
@@ -74,6 +75,7 @@ export default function Navbar() {
                         <Link href="/agoda-calculator" onClick={closeMenu} className={mobileNavLinkClass('/agoda-calculator')}>Agoda</Link>
                         <Link href="/airbnb-arbitrage-calculator" onClick={closeMenu} className={mobileNavLinkClass('/airbnb-arbitrage-calculator')}>Arbitrage / ROI</Link>
                         <Link href="/glamping-and-tiny-house-roi-calculator" onClick={closeMenu} className={mobileNavLinkClass('/glamping-and-tiny-house-roi-calculator')}>Glamping</Link>
+                        <Link href="/str-vs-ltr-calculator" onClick={closeMenu} className={mobileNavLinkClass('/str-vs-ltr-calculator')}>STR vs LTR</Link>
                         
                         {/* Mobile Blog Button (ෆෝන් එකට ගැළපෙන ලෙස පළල කර ඇත) */}
                         <div className="pt-4 mt-2 border-t border-gray-800">

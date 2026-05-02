@@ -3,6 +3,7 @@ title: "The Hidden Costs of Airbnb's 15.5% Fee (And How to Price Correctly)"
 date: "2026-04-30"
 description: "Discover expert insights and a complete guide on The Hidden Costs of Airbnb's 15.5% Fee (And How to Price Correctly). Learn how to maximize your short-term rental ROI with Rentcalo."
 coverImage: "https://images.unsplash.com/photo-1721315144205-210439c56581?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w5Mzg4NTR8MHwxfHNlYXJjaHwxfHx2YWNhdGlvbiUyMHJlbnRhbCUyMFRoZSUyMEhpZGRlbnxlbnwwfDB8fHwxNzc3NTUwNzM1fDA&ixlib=rb-4.1.0&q=80&w=1080"
+author: "Rentcalo Research Team"
 ---
 
 Let’s be honest: when I first started hosting back in 2014, the math was simple. You’d set a price, Airbnb would take their 3%, and the guest would pay a service fee on top of that. It felt like "found money." But fast forward a decade, and the landscape has shifted dramatically. If you’re a professional host or an investor looking at the "Simplified Pricing" model—where the host pays a flat 15% to 16% (usually hovering around 15.5%)—you might be feeling a bit of sticker shock.
