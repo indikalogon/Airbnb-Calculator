@@ -82,7 +82,7 @@ export default function Post({ postData, slug }) {
       </Head>
 
       <div className="bg-gradient-to-b from-blue-900 to-indigo-900 text-white pt-12 pb-16 px-4" style={{ fontFamily: "'Inter', sans-serif" }}>
-        <div className="container mx-auto max-w-4xl mb-8">
+        <div className="container mx-auto max-w-5xl mb-8">
           <Link href="/blog" className="text-blue-200 hover:text-white font-semibold flex items-center transition-colors w-fit">
             <i className="fa-solid fa-arrow-left mr-2"></i>
             Back to all articles
