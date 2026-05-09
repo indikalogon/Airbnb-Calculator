@@ -54,7 +54,7 @@ export default function AirbnbArbitrageCalculator() {
             </Head>
 
             {/* Main Calculator Interface */}
-            <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-5xl">
+            <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-6xl">
                 <div className="text-center mb-10">
                     <span className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm font-semibold px-4 py-1.5 rounded-full mb-4 inline-block shadow-md">Premium Investor Tool</span>
                     <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Airbnb Arbitrage & ROI Calculator</h1>
@@ -226,7 +226,7 @@ export default function AirbnbArbitrageCalculator() {
 
                         <hr className="my-10 border-gray-200" />
 
-                        <h3 className="text-2xl font-semibold mb-6 text-gray-900">Frequently Asked Questions (FAQ)</h3>
+                        <h3 className="text-3xl mb-6 text-gray-900 text-left"><i className="fa-solid fa-circle-question text-blue-500 mr-3"></i>Frequently Asked Questions</h3>
                         
                         <div className="space-y-6">
                             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">

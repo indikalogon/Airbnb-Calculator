@@ -89,7 +89,7 @@ export default function Post({ postData, slug }) {
           </Link>
         </div>
         
-        <div className="container mx-auto max-w-4xl text-left">
+        <div className="container mx-auto max-w-5xl text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight tracking-tight">
             {postData.title}
           </h1>
@@ -100,7 +100,7 @@ export default function Post({ postData, slug }) {
         </div>
       </div>
 
-      <main className="container mx-auto px-4 py-12 max-w-4xl flex-grow">
+      <main className="container mx-auto px-4 py-12 max-w-5xl flex-grow">
         
         {postData.coverImage && (
           <div className="mb-14 rounded-3xl overflow-hidden shadow-xl border border-gray-100">

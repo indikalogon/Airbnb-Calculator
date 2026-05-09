@@ -86,7 +86,7 @@ export default function StrVsLtrCalculator() {
                 `}</style>
             </Head>
 
-            <main className="flex-grow container mx-auto px-4 py-10 max-w-5xl print:max-w-none print:w-full print:py-0 print:px-0 print:h-[95vh] print:flex print:flex-col print:justify-center">
+            <main className="flex-grow container mx-auto px-4 py-10 max-w-6xl print:max-w-none print:w-full print:py-0 print:px-0 print:h-[95vh] print:flex print:flex-col print:justify-center">
                 
                 {/* Regular Web Header */}
                 <div className="text-center mb-10 print:hidden">
@@ -315,7 +315,7 @@ export default function StrVsLtrCalculator() {
                         </div>
                     </div>
 
-                    <h3 className="text-3xl font-extrabold mt-12 mb-8 text-gray-900 flex items-center">
+                    <h3 className="text-3xl mt-12 mb-8 text-gray-900 flex items-center">
                         <i className="fa-solid fa-circle-question text-blue-500 mr-3"></i> Frequently Asked Questions
                     </h3>
                     

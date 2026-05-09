@@ -61,7 +61,7 @@ export default function BookingComCalculator() {
             </Head>
 
             {/* Main Calculator Section */}
-            <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-5xl">
+            <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-6xl">
                 <div className="text-center mb-10">
                     <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mb-4 inline-block">Updated for 2026</span>
                     <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Booking.com Commission Calculator</h1>
@@ -214,7 +214,7 @@ export default function BookingComCalculator() {
                             In addition to the base commission, the method you use to collect guest payments affects your bottom line. If you utilize the "Payments by Booking.com" service to securely process guest credit cards—a highly recommended strategy in the US and Canada to reduce fraud—there is typically an additional payment processing fee. This fee generally ranges from 1.1% to 3.1% per transaction, depending on the guest's payment method and your specific region.
                         </p>
 
-                        <h3 className="text-2xl font-semibold mt-10 mb-4 text-gray-800" id="faq">Frequently Asked Questions (FAQ)</h3>
+                        <h3 className="text-3xl mb-6 text-gray-900 text-left"><i className="fa-solid fa-circle-question text-blue-500 mr-3"></i>Frequently Asked Questions</h3>
                         
                         <div className="space-y-6">
                             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">

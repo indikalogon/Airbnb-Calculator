@@ -24,6 +24,7 @@ export default function Footer() {
                             <li><Link href="/airbnb-arbitrage-calculator" className="hover:text-blue-400 transition-colors">Arbitrage / ROI</Link></li>
                             <li><Link href="/glamping-and-tiny-house-roi-calculator" className="hover:text-blue-400 transition-colors">Glamping Simulator</Link></li>
                             <li><Link href="/str-vs-ltr-calculator" className="text-gray-400 hover:text-blue-400 transition-colors">STR vs LTR Analyzer</Link></li>
+                            <li><Link href="/str-vs-mtr-calculator" className="text-gray-400 hover:text-blue-400 transition-colors">STR vs MTR</Link></li>
                             
                             {/* Perfectly Left-Aligned Blog Link */}
                             <li className="pt-3 mt-2 border-t border-gray-800">

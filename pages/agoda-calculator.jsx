@@ -66,7 +66,7 @@ export default function AgodaCalculator() {
             </Head>
 
             {/* Main Calculator Section */}
-            <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-5xl">
+            <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-6xl">
                 <div className="text-center mb-10">
                     <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mb-4 inline-block">Updated for 2026</span>
                     <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Agoda Host Commission Calculator</h1>
@@ -226,7 +226,7 @@ export default function AgodaCalculator() {
                             <strong>The crucial math:</strong> If you offer a 10% Agoda VIP discount, that 10% is deducted from your base rate first. Then, the 15% commission is taken from that newly reduced number. Our <strong>Agoda host payout calculator</strong> automates this multi-step deduction, showing you the exact dollar amount you will receive.
                         </p>
 
-                        <h3 className="text-2xl font-semibold mt-10 mb-4 text-gray-800" id="faq">Frequently Asked Questions (FAQ)</h3>
+                        <h3 className="text-3xl mb-6 text-gray-900 text-left"><i className="fa-solid fa-circle-question text-blue-500 mr-3"></i>Frequently Asked Questions</h3>
                         
                         <div className="space-y-6">
                             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">

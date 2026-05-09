@@ -62,7 +62,7 @@ export default function VrboCalculator() {
             </Head>
 
             {/* Main Calculator Section */}
-            <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-5xl">
+            <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-6xl">
                 <div className="text-center mb-10">
                     <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mb-4 inline-block">Updated for 2026</span>
                     <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Vrbo Host Fee Calculator</h1>
@@ -213,7 +213,7 @@ export default function VrboCalculator() {
                             If you run a high-performing property, the Pay-per-Booking model can become expensive. Vrbo offers an alternative: pay a flat $499 annual fee, and you will pay <strong>0% commission</strong> on your bookings for the entire year. You will, however, still be responsible for the 3% payment processing fee on each transaction.
                         </p>
 
-                        <h3 className="text-2xl font-semibold mt-10 mb-4 text-gray-800" id="faq">Frequently Asked Questions (FAQ)</h3>
+                        <h3 className="text-3xl mb-6 text-gray-900 text-left"><i className="fa-solid fa-circle-question text-blue-500 mr-3"></i>Frequently Asked Questions</h3>
                         
                         <div className="space-y-6">
                             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">

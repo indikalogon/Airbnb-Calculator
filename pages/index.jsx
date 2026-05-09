@@ -58,7 +58,7 @@ export default function Home() {
                 <meta name="description" content="Free Airbnb host fee calculator 2026. Calculate exact net payouts with auto-detected local VAT, property management fees, and the 15.5% simplified pricing model." />
                 <meta name="keywords" content="Airbnb host fee calculator, how much does airbnb charge hosts, airbnb net payout calculator, airbnb property management fee calculator, airbnb simplified pricing, airbnb host tax" />
                 <meta name="google-site-verification" content="1HPgt5oCJPaVXDkCPMtlbyOJjYw-cu1KTLN3jXPH_5E" />
-                <link rel="canonical" href="https://www.rentcalo.com/index" />
+                <link rel="canonical" href="https://www.rentcalo.com" />
                 
                 {/* Open Graph / Facebook / WhatsApp */}
                 <meta property="og:type" content="website" />
@@ -77,7 +77,7 @@ export default function Home() {
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
             </Head>
             {/* Main Calculator Section */}
-            <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-5xl">
+            <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-6xl">
                 <div className="text-center mb-10">
                     <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Airbnb Host Payout Calculator 2026</h1>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">Accurate fee estimates for the 15.5% Host-Only model, management fees, and VAT deductions.</p>
@@ -241,7 +241,7 @@ export default function Home() {
                             Furthermore, if you employ a property manager, their percentage is usually calculated from the Gross Booking Value as well. Our <strong>Airbnb property management fee calculator</strong> built into this tool instantly accounts for all these variables, providing you with a pixel-perfect net payout figure.
                         </p>
 
-                        <h3 className="text-2xl font-semibold mt-10 mb-4 text-gray-800" id="faq">Frequently Asked Questions (FAQ)</h3>
+                        <h3 className="text-3xl mb-6 text-gray-900 text-left"><i className="fa-solid fa-circle-question text-blue-500 mr-3"></i>Frequently Asked Questions</h3>
                         
                         <div className="space-y-6">
                             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">

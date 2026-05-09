@@ -26,7 +26,7 @@ export default function Navbar() {
 
     return (
         <nav className="bg-gray-900 text-white p-4 shadow-md border-b-4 border-blue-500 sticky top-0 z-50">
-            <div className="container mx-auto flex justify-between items-center max-w-5xl">
+            <div className="container mx-auto flex justify-between items-center max-w-6xl">
                 
                 {/* Logo එක */}
                 <Link href="/" className="flex items-center space-x-2">
@@ -43,6 +43,7 @@ export default function Navbar() {
                     <li><Link href="/airbnb-arbitrage-calculator" className={navLinkClass('/airbnb-arbitrage-calculator')}>Arbitrage / ROI</Link></li>
                     <li><Link href="/glamping-and-tiny-house-roi-calculator" className={navLinkClass('/glamping-and-tiny-house-roi-calculator')}>Glamping</Link></li>
                     <li><Link href="/str-vs-ltr-calculator" className={navLinkClass('/str-vs-ltr-calculator')}>STR vs LTR</Link></li>
+                    <li><Link href="/str-vs-mtr-calculator" className={navLinkClass('/str-vs-mtr-calculator')}>STR vs MTR</Link></li>
                     
                     {/* Beautiful Blog Button */}
                     <li className="pl-2 border-l border-gray-700">
