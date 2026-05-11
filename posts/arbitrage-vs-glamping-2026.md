@@ -10,9 +10,6 @@ The short-term rental landscape has evolved drastically. Gone are the days when 
 
 Today, two strategies are dominating the market: **Airbnb Rental Arbitrage** and **Off-Grid Glamping**. But which one is the right fit for your capital and risk tolerance? Let’s break down the startup costs, profit margins, and exactly how to calculate your ROI.
 
-![Modern interior of an Arbitrage apartment vs A scenic Geodesic Dome](/images/blog/concept-comparison.jpg)
-*Choosing between urban convenience and unique outdoor experiences depends entirely on your initial CapEx capabilities.*
-
 ---
 
 ## Strategy 1: The Urban Approach – Airbnb Rental Arbitrage
