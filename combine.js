@@ -10,7 +10,7 @@ const projectDir = __dirname;
 const excludeDirs = ['.next', 'node_modules', '.git', 'public', '.vercel'];
 
 // කියවිය යුතු ෆයිල් වර්ග (Extensions)
-const allowedExtensions = ['.js', '.jsx', '.json', '.css', '.md', '.env.local'];
+const allowedExtensions = ['.js', '.jsx', '.ts', '.tsx', '.json', '.css', '.md', '.env.local'];
 
 // කලින් සෑදූ ෆයිල් එකක් ඇත්නම් එය මකා දැමීම
 if (fs.existsSync(outputFilePath)) {
