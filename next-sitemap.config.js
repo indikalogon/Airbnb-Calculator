@@ -2,7 +2,8 @@
 module.exports = {
   siteUrl: 'https://www.rentcalo.com',
   generateRobotsTxt: true, // robots.txt ගොනුව ස්වයංක්‍රීයව නිර්මාණය කරයි
-  generateIndexSitemap: false, // කුඩා වෙබ් අඩවි සඳහා එක sitemap.xml එකක් පමණක් සෑදීමට
+  generateIndexSitemap: true, // කුඩා වෙබ් අඩවි සඳහා එක sitemap.xml එකක් පමණක් සෑදීමට
+  trailingSlash: false, // Redirect errors වළක්වා ගැනීමට මෙය අත්‍යවශ්‍යයි
   outDir: 'public', // Sitemap එක public ෆෝල්ඩරයට යැවීමට
   exclude: ['/404', '/500'], // Error pages sitemap එකෙන් ඉවත් කිරීමට
   

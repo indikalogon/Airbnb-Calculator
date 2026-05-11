@@ -5,12 +5,13 @@ import Link from 'next/link';
 export default function About() {
     return (
         <div className="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
-            <Head>
-                <title>About Us | Rentcalo</title>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-                <link rel="canonical" href="https://www.rentcalo.com/about" />
+            <Head>    
+            <title>About Us | Rentcalo</title>
+            <meta name="description" content="Rentcalo provides professional, up-to-date fee calculators and educational tools for short-term rental hosts and property managers worldwide." />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+            <link rel="canonical" href="https://www.rentcalo.com/about" />
             </Head>
-
+            
             <main className="flex-grow container mx-auto px-4 py-12 max-w-5xl">
                 <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
                     <h1 className="text-4xl font-extrabold text-gray-900 mb-8 border-b pb-4">About Rentcalo</h1>

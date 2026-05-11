@@ -6,9 +6,10 @@ export default function Contact() {
     return (
         <div className="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
             <Head>
-                <title>Contact Support | Rentcalo</title>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-                <link rel="canonical" href="https://www.rentcalo.com/contact" />
+            <title>Contact Support | Rentcalo</title>
+            <meta name="description" content="Contact Rentcalo support for questions about our short-term rental calculators, platform fee updates, or to suggest new features." />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+            <link rel="canonical" href="https://www.rentcalo.com/contact" />
             </Head>
 
             <main className="flex-grow container mx-auto px-4 py-12 max-w-5xl">
