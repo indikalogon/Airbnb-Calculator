@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.rentcalo.com
+
+# Sitemaps
+Sitemap: https://www.rentcalo.com/sitemap.xml
