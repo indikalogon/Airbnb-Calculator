@@ -257,7 +257,7 @@ export default function Home() {
 
       {/* SEO Content Section with Enhanced Internal Linking */}
       <section id="how-it-works" className="bg-white py-16 border-t border-gray-200 mt-8">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-6 text-gray-900">How to Calculate Airbnb Host Fees in 2026</h2>
           
           <div className="prose prose-lg text-gray-700 max-w-none">

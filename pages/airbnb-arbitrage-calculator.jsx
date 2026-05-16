@@ -250,7 +250,7 @@ export default function AirbnbArbitrageCalculator() {
 
       {/* EXPANDED SEO Article & FAQ Section with Internal Links and LSI Keywords */}
       <section className="bg-white py-16 border-t border-gray-200 mt-8">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-extrabold mb-6 text-gray-900 leading-tight">Mastering Your Margins: The Complete Airbnb Arbitrage Strategy</h2>
           
           <div className="prose prose-lg text-gray-700 max-w-none">
