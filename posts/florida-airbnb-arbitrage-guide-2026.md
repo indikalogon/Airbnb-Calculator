@@ -1,6 +1,6 @@
 ---
 title: "The Ultimate Guide to Airbnb Arbitrage in Florida (2026): Best Cities, Laws, and ROI"
-date: "2026-05-24"
+date: "2026-05-17"
 description: "Looking to start a short-term rental business without buying property? Discover the 2026 guide to Florida rental arbitrage, covering top markets like Orlando, legal tips, and exact profit margins."
 coverImage: "https://images.unsplash.com/photo-1476984251899-8d7fdfc5c92c?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 author: "Rentcalo Research Team"
