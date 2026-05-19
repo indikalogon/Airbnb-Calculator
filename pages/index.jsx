@@ -98,6 +98,7 @@ export default function Home() {
         <meta name="description" content="Stop guessing your Airbnb margins. Use our free Airbnb host fee calculator to find your exact net payout, factoring in the 15.5% simplified pricing and local taxes." />
         <meta name="keywords" content="Airbnb host fee calculator, how much does airbnb charge hosts, airbnb net payout calculator, airbnb property management fee calculator, airbnb simplified pricing, airbnb host tax" />
         <meta name="google-site-verification" content="1HPgt5oCJPaVXDkCPMtlbyOJjYw-cu1KTLN3jXPH_5E" />
+        <meta name="msvalidate.01" content="E67968CFF4A444C195D8DDD1FDC5BBB0" />
         <link rel="canonical" href="https://www.rentcalo.com" />
         
         {/* Open Graph / Facebook / WhatsApp */}
