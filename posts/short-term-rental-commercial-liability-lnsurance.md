@@ -2,7 +2,7 @@
 title: "Short-Term Rental Commercial Liability Insurance: The Ultimate Airbnb Host Protection Guide" 
 date: "2026-05-21" 
 description: "Learn how short-term rental commercial liability insurance protects Airbnb hosts from lawsuits, guest injuries, and expensive claims. Discover the exact coverage smart hosts use in 2026." 
-coverImage: "https://plus.unsplash.com/premium_photo-1661776260388-f5d1b14ce8a2?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+coverImage: "https://images.unsplash.com/photo-1637763723578-79a4ca9225f7?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
 author: "Rentcalo Research Team"
 ---
 
