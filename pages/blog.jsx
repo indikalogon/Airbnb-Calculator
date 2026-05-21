@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { getSortedPostsData } from '../lib/posts';
 
-// 1. පිටුව හැදෙන වෙලාවෙම (Build time) ලිපි ටික අරගැනීම (ඔබේ ක්‍රමය එලෙසම තබා ඇත)
+// 1. පිටුව හැදෙන වෙලාවෙම (Build time) ලිපි ටික අරගැනීම
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   return {
@@ -14,6 +14,19 @@ export async function getStaticProps() {
 
 // 2. Blog පිටුවේ නව Premium සැලසුම
 export default function Blog({ allPostsData }) {
+  // SEO Schema Markup (Blog Collection)
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Insights & Guides",
+    "url": "https://www.rentcalo.com/blog",
+    "description": "Expert advice, tax guides, and financial strategies for short-term rental hosts and real estate investors.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rentcalo"
+    }
+  };
+
   return (
     <div className="bg-gray-50 text-gray-800 font-sans min-h-screen pb-20">
       <Head>
@@ -22,6 +35,12 @@ export default function Blog({ allPostsData }) {
         <link rel="canonical" href="https://www.rentcalo.com/blog" />
         {/* FontAwesome for icons */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        
+        {/* Schema Injection */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+        />
       </Head>
 
       {/* Header Section (Modern Gradient) */}

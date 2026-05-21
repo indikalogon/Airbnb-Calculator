@@ -3,6 +3,33 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function About() {
+  // SEO Schema Markup (AboutPage & Organization)
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://www.rentcalo.com/about"
+        },
+        "name": "About Rentcalo",
+        "description": "Learn about the Rentcalo Research Team, experts in short-term rental analytics, Airbnb arbitrage, and real estate tax optimization."
+      },
+      {
+        "@type": "Organization",
+        "name": "Rentcalo",
+        "url": "https://www.rentcalo.com",
+        "logo": "https://www.rentcalo.com/favicon-32x32.png",
+        "sameAs": [
+          "https://twitter.com/rentcalo", // ඔබගේ සැබෑ Twitter ලින්ක් මෙතැනට දාන්න
+          "https://www.linkedin.com/company/rentcalo" // ඔබගේ සැබෑ LinkedIn ලින්ක් මෙතැනට දාන්න
+        ],
+        "description": "Rentcalo provides professional financial calculators and data-driven research for Airbnb hosts and real estate investors."
+      }
+    ]
+  };
+
   return (
     <div className="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
       <Head> 
@@ -11,6 +38,12 @@ export default function About() {
         <meta name="keywords" content="about rentcalo, short term rental experts, airbnb arbitrage analytics, real estate calculator data source" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="canonical" href="https://www.rentcalo.com/about" />
+
+        {/* Schema Injection */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+        />
       </Head>
       
       <main className="flex-grow container mx-auto px-4 py-12 max-w-5xl">
@@ -53,7 +86,7 @@ export default function About() {
               </p>
             </div>
 
-            {/* Call To Action Box (Matching Contact Page Style) */}
+            {/* Call To Action Box */}
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mt-8">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to secure your profit margins?</h3>
               <p className="mb-4 text-gray-700">
