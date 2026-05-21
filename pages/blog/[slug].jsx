@@ -21,11 +21,11 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ postData, slug }) {
-  // වෙනස සිදු කළේ මෙතැනයි: www. එකතු කර ඇත
   const domain = "https://www.rentcalo.com"; 
   const articleUrl = `${domain}/blog/${slug}`;
   const imageUrl = postData.coverImage ? `${domain}${postData.coverImage}` : `${domain}/images/default-blog-cover.jpg`;
 
+  // යාවත්කාලීන කළ සම්පූර්ණ Article Schema එක
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -34,42 +34,44 @@ export default function Post({ postData, slug }) {
       "@id": articleUrl
     },
     "headline": postData.title,
-    "description": postData.excerpt,
-    "image": imageUrl,
-    "author": {
-      "@type": "Person",
-      "name": postData.author || "Rentcalo Authority"
-    },
+    "description": postData.excerpt || postData.description,
+    "image": [imageUrl],
+    "datePublished": postData.date,
+    "author": [{
+      "@type": "Organization",
+      "name": postData.author || "Rentcalo Research Team",
+      "url": "https://www.rentcalo.com"
+    }],
     "publisher": {
       "@type": "Organization",
       "name": "Rentcalo",
       "logo": {
         "@type": "ImageObject",
-        "url": `${domain}/logo.png`
+        "url": `${domain}/favicon-32x32.png`
       }
-    },
-    "datePublished": postData.date,
+    }
   };
 
   return (
     <div className="bg-white text-gray-800 font-sans min-h-screen flex flex-col">
       <Head>
         <title>{postData.title} | Rentcalo Authority</title>
-        <meta name="description" content={postData.excerpt} />
+        <meta name="description" content={postData.excerpt || postData.description} />
         <link rel="canonical" href={articleUrl} />
         
         <meta property="og:type" content="article" />
         <meta property="og:url" content={articleUrl} />
         <meta property="og:title" content={postData.title} />
-        <meta property="og:description" content={postData.excerpt} />
+        <meta property="og:description" content={postData.excerpt || postData.description} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:site_name" content="Rentcalo" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={postData.title} />
-        <meta name="twitter:description" content={postData.excerpt} />
+        <meta name="twitter:description" content={postData.excerpt || postData.description} />
         <meta name="twitter:image" content={imageUrl} />
 
+        {/* Schema Markup Injection */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
@@ -95,7 +97,7 @@ export default function Post({ postData, slug }) {
           </h1>
           <div className="text-blue-200 font-medium flex items-center justify-start space-x-6 text-sm md:text-base">
             <span className="flex items-center"><i className="fa-regular fa-calendar mr-2"></i>{postData.date}</span>
-            {postData.author && <span className="flex items-center"><i className="fa-solid fa-pen-nib mr-2"></i>{postData.author}</span>}
+            <span className="flex items-center"><i className="fa-solid fa-pen-nib mr-2"></i>{postData.author || "Rentcalo Research Team"}</span>
           </div>
         </div>
       </div>

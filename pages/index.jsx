@@ -42,7 +42,7 @@ export default function Home() {
     autoDetectTax();
   }, []);
 
-  // ගණනය කිරීම්
+  // Calculations
   const subtotal = nightlyRate * nights;
   const extras = cleaningFee + extraGuestFee;
   const gross = subtotal + extras;
@@ -51,16 +51,16 @@ export default function Home() {
   const mgmtAmount = gross * (mgmtFeePercent / 100);
   const net = gross - hostFee - vatAmount - mgmtAmount;
 
-  // SEO Schema Markup
+  // SEO Schema Markup (Combined SoftwareApplication & FAQPage)
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Airbnb Host Payout Calculator",
+        "name": "Rentcalo Airbnb Host Fee Calculator",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "WebBrowser",
-        "description": "Free Airbnb host fee calculator to instantly calculate exact net payouts, factoring in the 15.5% simplified pricing model, property management fees, and local VAT.",
+        "description": "Instantly calculate exact Airbnb host fees, net payouts, and cleaning fee margins to maximize your short-term rental profits.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -84,6 +84,14 @@ export default function Home() {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "For most software-connected hosts and professional property managers, the 15.5% host-only fee is mandatory. Even if you have the option to switch, listings with upfront pricing often rank higher in search results and convert better, making the host-only fee more profitable in the long run if your base rates are adjusted correctly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do Property Management fees affect my bottom line?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Property managers usually take their cut from the Gross Booking Value before the Airbnb fee is deducted. For example, a 20% management fee alongside a 15.5% Airbnb fee means over 35% of your gross revenue goes toward expenses."
             }
           }
         ]
@@ -115,7 +123,15 @@ export default function Home() {
         <meta name="twitter:description" content="Stop losing money to hidden fees. Calculate exact net payouts for Airbnb, Booking.com, VRBO, and Agoda hosts." />
         <meta name="twitter:image" content="https://www.rentcalo.com/og-image.jpg" />
 
+        {/* Favicon Tags (Make sure these files exist in your 'public' folder) */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        
+        {/* Schema Markup Injection */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
@@ -274,7 +290,6 @@ export default function Home() {
               The move toward a unified host-only fee provides a much smoother booking experience for guests. By removing unexpected service fees at the final checkout stage, guests see a total price upfront. This transparency has been proven to increase conversion rates. However, it requires hosts to carefully recalculate their base nightly rates and cleaning fees to absorb this deduction without sacrificing their bottom line using an accurate <strong>Airbnb net payout calculator</strong>.
             </p>
 
-            {/* NEW ARBITRAGE SECTION FOR INBOUND LINKING */}
             <h3 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">Scaling Without Owning: The Arbitrage Strategy</h3>
             <p className="mb-6 leading-relaxed">
               Understanding your net payout is just the first step. What if you want to scale your short-term rental business but don't have $80,000 for a down payment? This is where <strong>Airbnb Rental Arbitrage</strong> comes in. By leasing a property long-term with explicit permission and sub-leasing it on Airbnb, you can generate massive cash flow with minimal upfront capital.
