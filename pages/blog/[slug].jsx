@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { getAllPostSlugs, getPostData } from '../../lib/posts';
+// getSortedPostsData යන්න මෙතැනට අලුතින් එක් කර ඇත
+import { getAllPostSlugs, getPostData, getSortedPostsData } from '../../lib/posts';
 
 export async function getStaticPaths() {
   const paths = getAllPostSlugs();
@@ -12,15 +13,23 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.slug);
+  
+  // සියලුම ලිපි ගෙන, දැනට කියවන ලිපිය ඉවත් කර, අලුත්ම ලිපි 3ක් පමණක් තෝරාගැනීම
+  const allPosts = getSortedPostsData();
+  const relatedPosts = allPosts
+    .filter((post) => post.slug !== params.slug)
+    .slice(0, 3);
+
   return {
     props: {
       postData,
       slug: params.slug, 
+      relatedPosts, // නව දත්තය Component එකට යැවීම
     },
   };
 }
 
-export default function Post({ postData, slug }) {
+export default function Post({ postData, slug, relatedPosts }) {
   const domain = "https://www.rentcalo.com"; 
   const articleUrl = `${domain}/blog/${slug}`;
   const imageUrl = postData.coverImage ? `${domain}${postData.coverImage}` : `${domain}/images/default-blog-cover.jpg`;
@@ -115,6 +124,7 @@ export default function Post({ postData, slug }) {
           dangerouslySetInnerHTML={{ __html: postData.contentHtml }} 
         />
 
+        {/* Call to Action (Calculators) */}
         <div className="mt-24 bg-gray-900 text-white rounded-3xl p-10 text-center shadow-xl border border-gray-800" style={{ fontFamily: "'Inter', sans-serif" }}>
             <h3 className="text-3xl font-bold mb-4 tracking-tight">Ready to run your numbers?</h3>
             <p className="text-gray-400 mb-8 text-lg">Stop guessing. Use our professional calculators to predict your exact ROI before investing.</p>
@@ -123,6 +133,33 @@ export default function Post({ postData, slug }) {
                 <Link href="/glamping-and-tiny-house-roi-calculator" className="bg-emerald-600 hover:bg-emerald-700 px-8 py-3.5 rounded-xl font-bold transition-all hover:-translate-y-1">Glamping Simulator</Link>
             </div>
         </div>
+
+        {/* --- NEW: Related Posts Section --- */}
+        {relatedPosts && relatedPosts.length > 0 && (
+          <div className="mt-24 pt-12 border-t border-gray-200" style={{ fontFamily: "'Inter', sans-serif" }}>
+            <h3 className="text-3xl font-extrabold text-gray-900 mb-8 tracking-tight">More Articles You Might Like</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {relatedPosts.map(({ slug: relatedSlug, title, coverImage, date }) => (
+                <Link href={`/blog/${relatedSlug}`} key={relatedSlug}>
+                  <div className="group cursor-pointer flex flex-col h-full">
+                    <div className="relative h-48 w-full overflow-hidden rounded-2xl mb-4 bg-gray-100 shadow-sm border border-gray-100">
+                      <img 
+                        src={coverImage || '/images/default-blog-cover.jpg'} 
+                        alt={title} 
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-in-out"
+                      />
+                    </div>
+                    <div className="text-sm font-medium text-blue-600 mb-2">{date}</div>
+                    <h4 className="text-xl font-bold text-gray-900 leading-tight group-hover:text-blue-700 transition-colors line-clamp-2">
+                      {title}
+                    </h4>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+
       </main>
 
       <style jsx global>{`

@@ -847,6 +847,33 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export default function About() {
+  // SEO Schema Markup (AboutPage & Organization)
+  const aboutSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://www.rentcalo.com/about"
+        },
+        "name": "About Rentcalo",
+        "description": "Learn about the Rentcalo Research Team, experts in short-term rental analytics, Airbnb arbitrage, and real estate tax optimization."
+      },
+      {
+        "@type": "Organization",
+        "name": "Rentcalo",
+        "url": "https://www.rentcalo.com",
+        "logo": "https://www.rentcalo.com/favicon-32x32.png",
+        "sameAs": [
+          "https://twitter.com/rentcalo", // ඔබගේ සැබෑ Twitter ලින්ක් මෙතැනට දාන්න
+          "https://www.linkedin.com/company/rentcalo" // ඔබගේ සැබෑ LinkedIn ලින්ක් මෙතැනට දාන්න
+        ],
+        "description": "Rentcalo provides professional financial calculators and data-driven research for Airbnb hosts and real estate investors."
+      }
+    ]
+  };
+
   return (
     <div className="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
       <Head> 
@@ -855,6 +882,12 @@ export default function About() {
         <meta name="keywords" content="about rentcalo, short term rental experts, airbnb arbitrage analytics, real estate calculator data source" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="canonical" href="https://www.rentcalo.com/about" />
+
+        {/* Schema Injection */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+        />
       </Head>
       
       <main className="flex-grow container mx-auto px-4 py-12 max-w-5xl">
@@ -897,7 +930,7 @@ export default function About() {
               </p>
             </div>
 
-            {/* Call To Action Box (Matching Contact Page Style) */}
+            {/* Call To Action Box */}
             <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg mt-8">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to secure your profit margins?</h3>
               <p className="mb-4 text-gray-700">
@@ -1521,11 +1554,11 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ postData, slug }) {
-  // වෙනස සිදු කළේ මෙතැනයි: www. එකතු කර ඇත
   const domain = "https://www.rentcalo.com"; 
   const articleUrl = `${domain}/blog/${slug}`;
   const imageUrl = postData.coverImage ? `${domain}${postData.coverImage}` : `${domain}/images/default-blog-cover.jpg`;
 
+  // යාවත්කාලීන කළ සම්පූර්ණ Article Schema එක
   const schemaData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -1534,42 +1567,44 @@ export default function Post({ postData, slug }) {
       "@id": articleUrl
     },
     "headline": postData.title,
-    "description": postData.excerpt,
-    "image": imageUrl,
-    "author": {
-      "@type": "Person",
-      "name": postData.author || "Rentcalo Authority"
-    },
+    "description": postData.excerpt || postData.description,
+    "image": [imageUrl],
+    "datePublished": postData.date,
+    "author": [{
+      "@type": "Organization",
+      "name": postData.author || "Rentcalo Research Team",
+      "url": "https://www.rentcalo.com"
+    }],
     "publisher": {
       "@type": "Organization",
       "name": "Rentcalo",
       "logo": {
         "@type": "ImageObject",
-        "url": `${domain}/logo.png`
+        "url": `${domain}/favicon-32x32.png`
       }
-    },
-    "datePublished": postData.date,
+    }
   };
 
   return (
     <div className="bg-white text-gray-800 font-sans min-h-screen flex flex-col">
       <Head>
         <title>{postData.title} | Rentcalo Authority</title>
-        <meta name="description" content={postData.excerpt} />
+        <meta name="description" content={postData.excerpt || postData.description} />
         <link rel="canonical" href={articleUrl} />
         
         <meta property="og:type" content="article" />
         <meta property="og:url" content={articleUrl} />
         <meta property="og:title" content={postData.title} />
-        <meta property="og:description" content={postData.excerpt} />
+        <meta property="og:description" content={postData.excerpt || postData.description} />
         <meta property="og:image" content={imageUrl} />
         <meta property="og:site_name" content="Rentcalo" />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={postData.title} />
-        <meta name="twitter:description" content={postData.excerpt} />
+        <meta name="twitter:description" content={postData.excerpt || postData.description} />
         <meta name="twitter:image" content={imageUrl} />
 
+        {/* Schema Markup Injection */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
@@ -1595,7 +1630,7 @@ export default function Post({ postData, slug }) {
           </h1>
           <div className="text-blue-200 font-medium flex items-center justify-start space-x-6 text-sm md:text-base">
             <span className="flex items-center"><i className="fa-regular fa-calendar mr-2"></i>{postData.date}</span>
-            {postData.author && <span className="flex items-center"><i className="fa-solid fa-pen-nib mr-2"></i>{postData.author}</span>}
+            <span className="flex items-center"><i className="fa-solid fa-pen-nib mr-2"></i>{postData.author || "Rentcalo Research Team"}</span>
           </div>
         </div>
       </div>
@@ -1739,7 +1774,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { getSortedPostsData } from '../lib/posts';
 
-// 1. පිටුව හැදෙන වෙලාවෙම (Build time) ලිපි ටික අරගැනීම (ඔබේ ක්‍රමය එලෙසම තබා ඇත)
+// 1. පිටුව හැදෙන වෙලාවෙම (Build time) ලිපි ටික අරගැනීම
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
   return {
@@ -1751,6 +1786,19 @@ export async function getStaticProps() {
 
 // 2. Blog පිටුවේ නව Premium සැලසුම
 export default function Blog({ allPostsData }) {
+  // SEO Schema Markup (Blog Collection)
+  const blogSchema = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Insights & Guides",
+    "url": "https://www.rentcalo.com/blog",
+    "description": "Expert advice, tax guides, and financial strategies for short-term rental hosts and real estate investors.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Rentcalo"
+    }
+  };
+
   return (
     <div className="bg-gray-50 text-gray-800 font-sans min-h-screen pb-20">
       <Head>
@@ -1759,6 +1807,12 @@ export default function Blog({ allPostsData }) {
         <link rel="canonical" href="https://www.rentcalo.com/blog" />
         {/* FontAwesome for icons */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        
+        {/* Schema Injection */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+        />
       </Head>
 
       {/* Header Section (Modern Gradient) */}
@@ -2660,7 +2714,7 @@ export default function Home() {
     autoDetectTax();
   }, []);
 
-  // ගණනය කිරීම්
+  // Calculations
   const subtotal = nightlyRate * nights;
   const extras = cleaningFee + extraGuestFee;
   const gross = subtotal + extras;
@@ -2669,16 +2723,16 @@ export default function Home() {
   const mgmtAmount = gross * (mgmtFeePercent / 100);
   const net = gross - hostFee - vatAmount - mgmtAmount;
 
-  // SEO Schema Markup
+  // SEO Schema Markup (Combined SoftwareApplication & FAQPage)
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "SoftwareApplication",
-        "name": "Airbnb Host Payout Calculator",
+        "name": "Rentcalo Airbnb Host Fee Calculator",
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "WebBrowser",
-        "description": "Free Airbnb host fee calculator to instantly calculate exact net payouts, factoring in the 15.5% simplified pricing model, property management fees, and local VAT.",
+        "description": "Instantly calculate exact Airbnb host fees, net payouts, and cleaning fee margins to maximize your short-term rental profits.",
         "offers": {
           "@type": "Offer",
           "price": "0",
@@ -2702,6 +2756,14 @@ export default function Home() {
             "acceptedAnswer": {
               "@type": "Answer",
               "text": "For most software-connected hosts and professional property managers, the 15.5% host-only fee is mandatory. Even if you have the option to switch, listings with upfront pricing often rank higher in search results and convert better, making the host-only fee more profitable in the long run if your base rates are adjusted correctly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do Property Management fees affect my bottom line?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Property managers usually take their cut from the Gross Booking Value before the Airbnb fee is deducted. For example, a 20% management fee alongside a 15.5% Airbnb fee means over 35% of your gross revenue goes toward expenses."
             }
           }
         ]
@@ -2733,7 +2795,15 @@ export default function Home() {
         <meta name="twitter:description" content="Stop losing money to hidden fees. Calculate exact net payouts for Airbnb, Booking.com, VRBO, and Agoda hosts." />
         <meta name="twitter:image" content="https://www.rentcalo.com/og-image.jpg" />
 
+        {/* Favicon Tags (Make sure these files exist in your 'public' folder) */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        
+        {/* Schema Markup Injection */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
@@ -2892,7 +2962,6 @@ export default function Home() {
               The move toward a unified host-only fee provides a much smoother booking experience for guests. By removing unexpected service fees at the final checkout stage, guests see a total price upfront. This transparency has been proven to increase conversion rates. However, it requires hosts to carefully recalculate their base nightly rates and cleaning fees to absorb this deduction without sacrificing their bottom line using an accurate <strong>Airbnb net payout calculator</strong>.
             </p>
 
-            {/* NEW ARBITRAGE SECTION FOR INBOUND LINKING */}
             <h3 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">Scaling Without Owning: The Arbitrage Strategy</h3>
             <p className="mb-6 leading-relaxed">
               Understanding your net payout is just the first step. What if you want to scale your short-term rental business but don't have $80,000 for a down payment? This is where <strong>Airbnb Rental Arbitrage</strong> comes in. By leasing a property long-term with explicit permission and sub-leasing it on Airbnb, you can generate massive cash flow with minimal upfront capital.
