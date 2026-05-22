@@ -57,7 +57,7 @@ export default function Blog({ allPostsData }) {
       </div>
 
       {/* Blog Cards Grid */}
-      <div className="container mx-auto px-4 max-w-6xl -mt-10 relative z-10">
+      <div className="container mx-auto px-4 max-w-5xl -mt-10 relative z-10">
         {/* lg:grid-cols-3 දැමූ බැවින් දැන් කාඩ්පත් 3ක් එක පේළියට පෙන්වයි */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           
