@@ -83,13 +83,13 @@ Not a bad return on investment, right? But here is what happens during the actua
 
 By successfully targeting just one mega-event, this arbitrage operator completely pays back their entire initial $8,000 CapEx investment (the furniture) in a single month, leaving pure, infinite ROI for the remainder of their lease term.
 
-**Pro Tip:** Never blindly guess these margins. If you are underwriting a new lease or buying a property specifically for a major event, use our [**Airbnb Arbitrage & ROI Calculator**](http://docs.google.com/airbnb-arbitrage-calculator) to ensure your baseline months easily cover your expenses, making the event month pure bonus profit.
+**Pro Tip:** Never blindly guess these margins. If you are underwriting a new lease or buying a property specifically for a major event, use our [**Airbnb Arbitrage & ROI Calculator**](/airbnb-arbitrage-calculator) to ensure your baseline months easily cover your expenses, making the event month pure bonus profit.
 
 ## Iron-Clad Operations: Don't Let a Party Ruin Your Year
 
 High prices attract high expectations—and unfortunately, sometimes high risk. The absolute last thing you want is a group of 15 unruly people destroying your newly furnished property after their home country wins a gold medal.
 
-1. **Do Not Rely on AirCover Alone:** As I detailed in our comprehensive guide on [Short-Term Rental Insurance](http://docs.google.com/short-term-rental-insurance), Airbnb's host guarantee is a great backup, but it is not commercial liability insurance. If an unauthorized party results in severe property damage or injury, a standard homeowner's policy will drop your coverage instantly. Secure a commercial STR policy (like Proper Insurance or Steadily) well before the event kicks off.  
+1. **Do Not Rely on AirCover Alone:** As I detailed in our comprehensive guide on [Short-Term Rental Insurance](/short-term-rental-insurance), Airbnb's host guarantee is a great backup, but it is not commercial liability insurance. If an unauthorized party results in severe property damage or injury, a standard homeowner's policy will drop your coverage instantly. Secure a commercial STR policy (like Proper Insurance or Steadily) well before the event kicks off.  
 2. **Install Smart Noise Monitors:** Devices like Minut or NoiseAware are non-negotiable for serious hosts. They do not record private conversations (which respects guest privacy), but they continuously monitor decibel levels and crowd density based on Wi-Fi signals. If a party starts escalating at 11 PM, you’ll get an automated alert on your phone long before the neighbors call the police.  
 3. **Charge an Event Security Deposit:** Use an API-connected property management system (PMS) or your own direct booking website to hold a $500 to $1,000 credit card authorization during the stay. It is a psychological fact: guests treat your home with drastically more respect when they know their own hard-earned money is on the line.
 
@@ -105,7 +105,7 @@ Instead of dealing with the operational chaos of the event yourself, you can pac
 
 Whether you decide to hold and operate, run an aggressive arbitrage model, or build a unique glamping site outside the city limits for tourists looking to escape the extreme crowds, the underlying math has to make sense *today*.
 
-Stop guessing with your financial future. Before you change a single price on your calendar or sign a new 12-month lease, run your local market data through our [**STR vs LTR Analyzer**](http://docs.google.com/str-vs-ltr-calculator) to see exactly where your break-even point lies.
+Stop guessing with your financial future. Before you change a single price on your calendar or sign a new 12-month lease, run your local market data through our [**STR vs LTR Analyzer**](/str-vs-ltr-calculator) to see exactly where your break-even point lies.
 
 ## Frequently Asked Questions (FAQ)
 
@@ -123,4 +123,4 @@ You are charging premium rates, which means your guests will expect a premium, f
 
 ### **How do I rank my listing higher before the event?**
 
-Update your listing title and first paragraph to include highly searched, event-specific keywords (e.g., "Walk to Olympic Stadium," "2028 Games Hub," or "Corporate Event Housing"). Additionally, unblocking your calendar right when demand starts to surge (usually 6 to 9 months prior) signals fresh availability to the Airbnb algorithm, giving you a temporary boost. For more direct traffic strategies, read our full guide on [how to rank for 'short term rentals near me'](http://docs.google.com/how-to-rank-for-short-term-rentals-near-me).
+Update your listing title and first paragraph to include highly searched, event-specific keywords (e.g., "Walk to Olympic Stadium," "2028 Games Hub," or "Corporate Event Housing"). Additionally, unblocking your calendar right when demand starts to surge (usually 6 to 9 months prior) signals fresh availability to the Airbnb algorithm, giving you a temporary boost. For more direct traffic strategies, read our full guide on [how to rank for 'short term rentals near me'](/how-to-rank-for-short-term-rentals-near-me).
