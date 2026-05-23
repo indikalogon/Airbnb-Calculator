@@ -108,7 +108,7 @@ It depends on two things: your location and your software. In many global region
 
 ### **How do Property Management fees stack with this?**
 
-This is a critical point for passive investors. If you hire a property manager who takes 20%, they almost always take their 20% off the *Gross* Booking Value. If Airbnb takes 15.5% and your manager takes 20%, you are instantly losing over 35% of your revenue before you even pay your mortgage or utilities. You must use a professional tool like our [**Airbnb host payout calculator 15.5**](http://docs.google.com/) to ensure your margins can survive both fees.
+This is a critical point for passive investors. If you hire a property manager who takes 20%, they almost always take their 20% off the *Gross* Booking Value. If Airbnb takes 15.5% and your manager takes 20%, you are instantly losing over 35% of your revenue before you even pay your mortgage or utilities. You must use a professional tool like our [**Airbnb host payout calculator 15.5**](/index) to ensure your margins can survive both fees.
 
 ### **Do I pay taxes on the money Airbnb takes?**
 
@@ -126,6 +126,6 @@ If your base rate is off by even 10%, the compounded effect of OTA commissions, 
 
 You need to know your exact numbers before a guest ever clicks "Book."
 
-Stop leaving your margins to chance. Head over to our [**Rentcalo Host Free and ROI Calculators**](http://docs.google.com/airbnb-arbitrage-calculator) right now. Plug in your current nightly rate, add your cleaning fees, and let our engine show you exactly what your net payout will be under the 15.5% model.
+Stop leaving your margins to chance. Head over to our [**Rentcalo Host Free and ROI Calculators**](/index) right now. Plug in your current nightly rate, add your cleaning fees, and let our engine show you exactly what your net payout will be under the 15.5% model.
 
 Adjust your rates, protect your profits, and get back to building real wealth.
