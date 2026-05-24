@@ -55,7 +55,7 @@ Here is why relying solely on platform protections is a massive gamble:
 
 1. **You are not the named insured:** Airbnb holds the policy, not you. They act as the middleman. If things get complicated, their primary goal is to protect their corporate liability, not your personal assets.
 2. **Loss of Income is rarely covered:** If a guest burns down your kitchen, AirCover might pay to rebuild the cabinets. But it will take four months to rebuild. During those four months, you have to cancel $20,000 worth of bookings. Airbnb will not replace that lost income, but your mortgage payment is still due on the 1st of the month.
-3. **The Direct Booking Trap:** If you followed our guide on [How to Rank Your Property for "Short Term Rentals Near Me"](/how-to-rank-for-short-term-rentals-near-me) and are driving highly profitable direct bookings through your own website, AirCover does absolutely nothing for you. The moment a guest books off-platform, you are completely naked in terms of liability. 
+3. **The Direct Booking Trap:** If you followed our guide on [How to Rank Your Property for "Short Term Rentals Near Me"](/blog/how-to-rank-for-short-term-rentals-near-me) and are driving highly profitable direct bookings through your own website, AirCover does absolutely nothing for you. The moment a guest books off-platform, you are completely naked in terms of liability. 
 
 ---
 
@@ -134,4 +134,4 @@ Usually, no. A personal umbrella policy sits on top of your underlying homeowner
 If you live in the house and only rent a room, some standard insurance companies will allow you to add a "home-sharing endorsement" to your existing policy for a small fee. However, if you rent out the entire unhosted home, you need a dedicated commercial STR policy.
 
 **Do I need STR insurance if I only do Mid-Term Rentals (MTR)?**
-If you are doing 30+ day stays (like corporate housing or traveling nurses) with a signed lease agreement, a standard Landlord (DP-3) policy is usually sufficient. Standard insurance defines anything under 30 days as a short-term/transient business. (Curious about pivoting? Check out our **[STR vs MTR Strategy Guide](/str-vs-mtr-calculator)**).
+If you are doing 30+ day stays (like corporate housing or traveling nurses) with a signed lease agreement, a standard Landlord (DP-3) policy is usually sufficient. Standard insurance defines anything under 30 days as a short-term/transient business. (Curious about pivoting? Check out our **[STR vs MTR Strategy Guide](/blog/the-ultimate-guide-to-airbnb-arbitrage-in-2026)).
