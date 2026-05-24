@@ -82,7 +82,7 @@ export default function About() {
                 Rentcalo was founded in 2025 by a small group of short-term rental underwriters and full-stack software engineers who grew frustrated with the lack of reliable cash-flow modeling tools. While platforms introduced hidden fees and stacked promo discounts, hosts were forced to model multi-thousand-dollar arbitrage units using outdated, buggy spreadsheets.
               </p>
               <p>
-                We took our background in structured technical curriculum development, financial risk modeling, and advanced web development to build an interactive ecosystem where any host—from a beginner setting up an <Link href="/how-to-start-airbnb-arbitrage-with-just-dollar5000" className="text-blue-600 font-bold hover:underline">Airbnb arbitrage model with $5000</Link> to an institutional fund managing a premium glamping resort—can get a bulletproof analysis in seconds.
+                We took our background in structured technical curriculum development, financial risk modeling, and advanced web development to build an interactive ecosystem where any host—from a beginner setting up an <Link href="/blog/how-to-start-airbnb-arbitrage-with-just-dollar5000" className="text-blue-600 font-bold hover:underline">Airbnb arbitrage model with $5000</Link> to an institutional fund managing a premium glamping resort—can get a bulletproof analysis in seconds.
               </p>
             </div>
 
