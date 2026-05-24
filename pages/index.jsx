@@ -102,24 +102,24 @@ export default function Home() {
   return (
     <div className="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
       <Head>
-        <title>Free Airbnb Host Fee Calculator 2026 | Exact Net Payouts</title>
+        <title>Free Airbnb Host Fees Calculator 2026 | Exact Net Payouts</title>
         <meta name="description" content="Stop guessing your Airbnb margins. Use our free Airbnb host fee calculator to find your exact net payout, factoring in the 15.5% simplified pricing and local taxes." />
-        <meta name="keywords" content="Airbnb host fee calculator, how much does airbnb charge hosts, airbnb net payout calculator, airbnb property management fee calculator, airbnb simplified pricing, airbnb host tax" />
+        <meta name="keywords" content="Airbnb host fees calculator, Airbnb host fee calculator, airbnb arbitrage calculator, airbnb payout calculator,airbnb fee calculator, airbnb arbitrage calculator, airbnb profit margin, how much does airbnb charge hosts, airbnb net payout calculator, airbnb property management fee calculator, airbnb simplified pricing, airbnb host tax" />
         <meta name="google-site-verification" content="1HPgt5oCJPaVXDkCPMtlbyOJjYw-cu1KTLN3jXPH_5E" />
         <meta name="msvalidate.01" content="E67968CFF4A444C195D8DDD1FDC5BBB0" />
         <link rel="canonical" href="https://www.rentcalo.com" />
         
         {/* Open Graph / Facebook / WhatsApp */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.rentcalo.com/" />
-        <meta property="og:title" content="Free Airbnb Host Fee Calculator 2026 | Exact Net Payouts" />
+        <meta property="og:url" content="https://www.rentcalo.com" />
+        <meta property="og:title" content="Free Airbnb Host Fees Calculator 2026 | Exact Net Payouts" />
         <meta property="og:description" content="Stop losing money to hidden fees. Calculate exact net payouts for Airbnb, Booking.com, VRBO, and Agoda hosts." />
         <meta property="og:image" content="https://www.rentcalo.com/og-image.jpg" />
 
         {/* Twitter / X */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content="https://www.rentcalo.com/" />
-        <meta name="twitter:title" content="Free Airbnb Host Fee Calculator 2026 | Exact Net Payouts" />
+        <meta name="twitter:url" content="https://www.rentcalo.com" />
+        <meta name="twitter:title" content="Free Airbnb Host Fees Calculator 2026 | Exact Net Payouts" />
         <meta name="twitter:description" content="Stop losing money to hidden fees. Calculate exact net payouts for Airbnb, Booking.com, VRBO, and Agoda hosts." />
         <meta name="twitter:image" content="https://www.rentcalo.com/og-image.jpg" />
 
