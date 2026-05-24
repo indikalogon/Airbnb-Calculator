@@ -2,7 +2,7 @@
 title: "The Great Wealth Migration: How Florida and Texas Hosts Are Cashing In on the California Exodus" 
 date: "2026-05-26" 
 description: "Wealthy Californians and corporations are flooding into Florida and Texas. Here's the real-world playbook STR and MTR hosts are using to capture the highly profitable corporate relocation market." 
-coverImage: "https://images.unsplash.com/photo-1629487687207-e0f3980c201a?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+coverImage: "https://images.unsplash.com/photo-1629487687207-e0f3980c201a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
 author: "Rentcalo Research Team"
 ---
 
