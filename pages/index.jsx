@@ -51,7 +51,7 @@ export default function Home() {
   const mgmtAmount = gross * (mgmtFeePercent / 100);
   const net = gross - hostFee - vatAmount - mgmtAmount;
 
-  // SEO Schema Markup (Combined SoftwareApplication & FAQPage)
+  // SEO Schema Markup
   const schemaData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -102,28 +102,29 @@ export default function Home() {
   return (
     <div className="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
       <Head>
-        <title>Free Airbnb Host Fees Calculator 2026 | Exact Net Payouts</title>
-        <meta name="description" content="Stop guessing your Airbnb margins. Use our free Airbnb host fee calculator to find your exact net payout, factoring in the 15.5% simplified pricing and local taxes." />
-        <meta name="keywords" content="Airbnb host fees calculator, Airbnb host fee calculator, airbnb arbitrage calculator, airbnb payout calculator,airbnb fee calculator, airbnb arbitrage calculator, airbnb profit margin, how much does airbnb charge hosts, airbnb net payout calculator, airbnb property management fee calculator, airbnb simplified pricing, airbnb host tax" />
+        {/* NEW HIGH-CTR SEO TITLE AND META DESCRIPTION */}
+        <title>Airbnb Host Fee Calculator 2026 | Calculate 15.5% Net Payouts</title>
+        <meta name="description" content="Stop losing money to hidden platform fees. Use our free Airbnb Host Fee Calculator to instantly find your exact net payout, 15.5% margins, and true ROI." />
+        <meta name="keywords" content="Airbnb host fees calculator, Airbnb host fee calculator, airbnb arbitrage calculator, airbnb payout calculator,airbnb fee calculator, airbnb profit margin, how much does airbnb charge hosts, airbnb net payout calculator, airbnb property management fee calculator, airbnb simplified pricing, airbnb host tax" />
         <meta name="google-site-verification" content="1HPgt5oCJPaVXDkCPMtlbyOJjYw-cu1KTLN3jXPH_5E" />
         <meta name="msvalidate.01" content="E67968CFF4A444C195D8DDD1FDC5BBB0" />
         <link rel="canonical" href="https://www.rentcalo.com" />
         
-        {/* Open Graph / Facebook / WhatsApp */}
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.rentcalo.com" />
-        <meta property="og:title" content="Free Airbnb Host Fees Calculator 2026 | Exact Net Payouts" />
-        <meta property="og:description" content="Stop losing money to hidden fees. Calculate exact net payouts for Airbnb, Booking.com, VRBO, and Agoda hosts." />
+        <meta property="og:title" content="Airbnb Host Fee Calculator 2026 | Calculate 15.5% Net Payouts" />
+        <meta property="og:description" content="Stop losing money to hidden platform fees. Use our free Airbnb Host Fee Calculator to instantly find your exact net payout, 15.5% margins, and true ROI." />
         <meta property="og:image" content="https://www.rentcalo.com/og-image.jpg" />
 
         {/* Twitter / X */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.rentcalo.com" />
-        <meta name="twitter:title" content="Free Airbnb Host Fees Calculator 2026 | Exact Net Payouts" />
-        <meta name="twitter:description" content="Stop losing money to hidden fees. Calculate exact net payouts for Airbnb, Booking.com, VRBO, and Agoda hosts." />
+        <meta name="twitter:title" content="Airbnb Host Fee Calculator 2026 | Calculate 15.5% Net Payouts" />
+        <meta name="twitter:description" content="Stop losing money to hidden platform fees. Use our free Airbnb Host Fee Calculator to instantly find your exact net payout, 15.5% margins, and true ROI." />
         <meta name="twitter:image" content="https://www.rentcalo.com/og-image.jpg" />
 
-        {/* Favicon Tags (Make sure these files exist in your 'public' folder) */}
+        {/* Favicon Tags */}
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -272,8 +273,65 @@ export default function Home() {
         </div>
       </main>
 
-      {/* SEO Content Section with Enhanced Internal Linking */}
-      <section id="how-it-works" className="bg-white py-16 border-t border-gray-200 mt-8">
+      {/* NEW SECTION: Blog Post Cards */}
+      <section id="latest-articles" className="bg-white py-16 border-t border-gray-200 mt-8">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest Airbnb Host Strategies & Guides</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Expert insights to help you navigate algorithm changes, protect your margins, and scale your short-term rental portfolio.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1: 15.5% Fee Guide */}
+            <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
+              <img src="https://plus.unsplash.com/premium_photo-1663075988872-72d05e3aaa66?q=80&w=1171&auto=format&fit=crop" alt="Airbnb 15.5% fee guide" className="w-full h-48 object-cover" />
+              <div className="p-6 flex flex-col flex-grow">
+                <span className="text-blue-600 text-xs font-bold uppercase tracking-wider">Pricing Strategy</span>
+                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">Master the 15.5% Simplified Pricing Model</h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">Stop losing money to hidden fees. Discover how to master the new pricing model and calculate your exact net payout.</p>
+                <div className="mt-auto">
+                  <Link href="/blog/airbnb-15-5-percent-fee-simplified-pricing-guide-2026" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                    Read Full Guide &rarr;
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 2: Arbitrage Start Guide */}
+            <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
+              <img src="https://images.unsplash.com/photo-1544143086-828f66ac3945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Start Airbnb Arbitrage" className="w-full h-48 object-cover" />
+              <div className="p-6 flex flex-col flex-grow">
+                <span className="text-green-600 text-xs font-bold uppercase tracking-wider">Investing</span>
+                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">How to Start Airbnb Arbitrage with Just $5,000</h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">The scrappy minimum guide to launching your first rental arbitrage unit without buying property or taking massive loans.</p>
+                <div className="mt-auto">
+                  <Link href="/blog/how-to-start-airbnb-arbitrage-with-just-dollar5000" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                    Read Full Guide &rarr;
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Card 3: Liability Insurance Guide */}
+            <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
+              <img src="https://images.unsplash.com/photo-1637763723578-79a4ca9225f7?q=80&w=1171&auto=format&fit=crop" alt="Airbnb liability insurance" className="w-full h-48 object-cover" />
+              <div className="p-6 flex flex-col flex-grow">
+                <span className="text-red-600 text-xs font-bold uppercase tracking-wider">Asset Protection</span>
+                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">STR Commercial Liability Insurance Guide</h3>
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">Stop risking your personal assets. Why smart hosts never rely on platform protection alone and how to insure properly.</p>
+                <div className="mt-auto">
+                  <Link href="/blog/short-term-rental-commercial-liability-lnsurance" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                    Read Full Guide &rarr;
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Content Section */}
+      <section id="how-it-works" className="bg-white py-16 border-t border-gray-200">
         <div className="container mx-auto px-4 max-w-5xl">
           <h2 className="text-3xl font-bold mb-6 text-gray-900">How to Calculate Airbnb Host Fees in 2026</h2>
           
