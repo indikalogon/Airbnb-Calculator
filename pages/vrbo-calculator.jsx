@@ -41,7 +41,7 @@ export default function VrboCalculator() {
         autoDetectTax();
     }, []);
 
-    // ගණනය කිරීම්
+    // Calculations
     const subtotal = nightlyRate * nights;
     const gross = subtotal + cleaningFee;
     
@@ -51,14 +51,90 @@ export default function VrboCalculator() {
     
     const net = gross - commissionAmount - paymentFeeAmount - vatAmount;
 
+    // SEO Schema Markup (Combined SoftwareApplication & FAQPage)
+    const schemaData = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "SoftwareApplication",
+                "name": "Rentcalo Vrbo Host Fee Calculator",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "WebBrowser",
+                "description": "Instantly calculate your exact Vrbo net payout, factoring in the 5% commission, 3% payment processing fee, and local taxes.",
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "When should I switch to the Vrbo Annual Subscription?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The break-even point is roughly $10,000 in gross annual revenue. If your property generates $10,000 or more per year specifically on the Vrbo platform, paying the $499 upfront will save you money compared to giving up 5% on every single booking."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does Vrbo charge commission on taxes?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Vrbo does not charge the 5% commission on taxes or refundable damage deposits. However, the 3% payment processing fee does apply to the total amount processed, which includes taxes and deposits."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Vrbo vs Airbnb Fees: Which is cheaper for hosts?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Generally, Vrbo is cheaper for the host. Vrbo takes around 8% total, whereas Airbnb's standard host-only fee is 15.5%. However, Airbnb typically provides a much higher volume of bookings for most urban and smaller properties."
+                        }
+                    }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
             <Head>
-                <title>Vrbo Host Fee Calculator 2026 (Auto Tax) | Rentcalo</title>
-                <meta name="description" content="Free Vrbo host fee calculator 2026. Calculate exact 5% commission, 3% payment processing fees, and auto-detected local taxes for your true net payout." />
-                <meta name="keywords" content="vrbo host fee calculator, how much does vrbo charge hosts, vrbo commission rate, vrbo pay per booking fee, vrbo vs airbnb fees, vrbo calculator" />
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+                {/* HIGH-CTR SEO TITLE AND META DESCRIPTION */}
+                <title>Free Vrbo Host Fee Calculator 2026 | Calculate 8% Net Payouts</title>
+                <meta name="description" content="Stop guessing your true Vrbo profits. Instantly calculate the exact 5% commission, 3% payment fees, and true net payout to maximize your ROI." />
+                <meta name="keywords" content="vrbo host fee calculator, how much does vrbo charge hosts, vrbo commission rate, vrbo pay per booking fee, vrbo vs airbnb fees, vrbo calculator, vrbo payout calculator" />
                 <link rel="canonical" href="https://www.rentcalo.com/vrbo-calculator" />
+                
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.rentcalo.com/vrbo-calculator" />
+                <meta property="og:title" content="Free Vrbo Host Fee Calculator 2026 | Calculate 8% Net Payouts" />
+                <meta property="og:description" content="Stop guessing your true Vrbo profits. Instantly calculate the exact 5% commission, 3% payment fees, and true net payout." />
+                <meta property="og:image" content="https://www.rentcalo.com/og-image.jpg" />
+
+                {/* Twitter / X */}
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:url" content="https://www.rentcalo.com/vrbo-calculator" />
+                <meta name="twitter:title" content="Free Vrbo Host Fee Calculator 2026 | Calculate 8% Net Payouts" />
+                <meta name="twitter:description" content="Stop guessing your true Vrbo profits. Instantly calculate the exact 5% commission, 3% payment fees, and true net payout." />
+                <meta name="twitter:image" content="https://www.rentcalo.com/og-image.jpg" />
+
+                {/* Optimized FontAwesome Load (Prevents Render-Blocking & Resolves Dependency Tree) */}
+                <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
+                <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onLoad={(e) => { e.currentTarget.media = 'all'; }} />
+                <noscript>
+                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+                </noscript>
+                
+                {/* Schema Markup Injection */}
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+                />
             </Head>
 
             {/* Main Calculator Section */}
@@ -72,7 +148,7 @@ export default function VrboCalculator() {
                 <div className="flex flex-col lg:flex-row gap-8">
                     {/* Left Column: Inputs */}
                     <div className="bg-white p-8 rounded-2xl shadow-lg w-full lg:w-7/12 border border-gray-100">
-                        <h3 className="text-2xl font-semibold mb-6 border-b pb-2 text-gray-800">Booking Details</h3>
+                        <h2 className="text-2xl font-semibold mb-6 border-b pb-2 text-gray-800">Booking Details</h2>
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
                             <div>
@@ -97,7 +173,7 @@ export default function VrboCalculator() {
                             </div>
                         </div>
 
-                        <h3 className="text-xl font-semibold mb-6 border-b pb-2 text-gray-800">Vrbo Fees & Taxes</h3>
+                        <h2 className="text-xl font-semibold mb-6 border-b pb-2 text-gray-800">Vrbo Fees & Taxes</h2>
                         
                         <div className="space-y-5">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -130,7 +206,7 @@ export default function VrboCalculator() {
                         <div className="bg-gray-900 text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
                             <div className="absolute -top-10 -right-10 w-32 h-32 bg-blue-500 rounded-full opacity-20 blur-2xl"></div>
                             
-                            <h3 className="text-2xl font-semibold mb-6">Earnings Summary</h3>
+                            <h2 className="text-2xl font-semibold mb-6">Earnings Summary</h2>
                             
                             <div className="space-y-4 text-sm md:text-base">
                                 <div className="flex justify-between items-center text-gray-400">
@@ -175,9 +251,10 @@ export default function VrboCalculator() {
 
                         {/* Expert Host Tip Section for Vrbo */}
                         <div className="bg-blue-50 p-6 rounded-2xl shadow-sm border border-blue-100 mt-2">
-                            <h4 className="font-bold text-blue-900 mb-2">
+                            {/* Accessibility Fix: Changed h4 to h3 */}
+                            <h3 className="font-bold text-blue-900 mb-2">
                                 <i className="fa-solid fa-lightbulb text-yellow-500 mr-2"></i>Expert Host Tip: The $10k Rule
-                            </h4>
+                            </h3>
                             <p className="text-sm text-blue-800 leading-relaxed">
                                 Vrbo offers an <strong>Annual Subscription for $499</strong> instead of the 5% per-booking commission (you still pay the 3% card fee). If your property grosses more than <strong>$10,000 per year</strong> on Vrbo, switching to the Annual Subscription will save you hundreds of dollars in host fees!
                             </p>
@@ -186,14 +263,72 @@ export default function VrboCalculator() {
                 </div>
             </main>
 
+            {/* Blog Post Cards Section for Internal Linking */}
+            <section id="latest-articles" className="bg-white py-16 border-t border-gray-200 mt-8">
+                <div className="container mx-auto px-4 max-w-6xl">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest Airbnb & VRBO Host Strategies</h2>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">Expert insights to help you navigate algorithm changes, protect your margins, and scale your short-term rental portfolio.</p>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                            <img src="https://plus.unsplash.com/premium_photo-1663075988872-72d05e3aaa66?q=80&w=1171&auto=format&fit=crop" alt="Airbnb 15.5% fee guide" width="400" height="192" className="w-full h-48 object-cover" />
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="text-blue-700 text-xs font-bold uppercase tracking-wider">Pricing Strategy</span>
+                                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">Master the 15.5% Simplified Pricing Model</h3>
+                                <p className="text-gray-600 text-sm mb-4 line-clamp-3">Stop losing money to hidden fees. Discover how to master the new pricing model and calculate your exact net payout.</p>
+                                <div className="mt-auto">
+                                    <Link href="/blog/airbnb-15-5-percent-fee-simplified-pricing-guide-2026" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                                        Read Full Guide &rarr;
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1544143086-828f66ac3945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Start Airbnb Arbitrage" width="400" height="192" className="w-full h-48 object-cover" />
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="text-green-700 text-xs font-bold uppercase tracking-wider">Investing</span>
+                                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">How to Start Airbnb Arbitrage with Just $5,000</h3>
+                                <p className="text-gray-600 text-sm mb-4 line-clamp-3">The scrappy minimum guide to launching your first rental arbitrage unit without buying property or taking massive loans.</p>
+                                <div className="mt-auto">
+                                    <Link href="/blog/how-to-start-airbnb-arbitrage-with-just-dollar5000" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                                        Read Full Guide &rarr;
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                            <img src="https://images.unsplash.com/photo-1637763723578-79a4ca9225f7?q=80&w=1171&auto=format&fit=crop" alt="Airbnb liability insurance" width="400" height="192" className="w-full h-48 object-cover" />
+                            <div className="p-6 flex flex-col flex-grow">
+                                <span className="text-red-700 text-xs font-bold uppercase tracking-wider">Asset Protection</span>
+                                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">STR Commercial Liability Insurance Guide</h3>
+                                <p className="text-gray-600 text-sm mb-4 line-clamp-3">Stop risking your personal assets. Why smart hosts never rely on platform protection alone and how to insure properly.</p>
+                                <div className="mt-auto">
+                                    <Link href="/blog/short-term-rental-commercial-liability-lnsurance" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+                                        Read Full Guide &rarr;
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* SEO Content Section */}
-            <section id="how-it-works" className="bg-white py-16 border-t border-gray-200 mt-8">
+            <section id="how-it-works" className="bg-white py-16 border-t border-gray-200">
                 <div className="container mx-auto px-4 max-w-4xl">
                     <h2 className="text-3xl font-bold mb-6 text-gray-900">How to Calculate Vrbo Host Fees in 2026</h2>
                     
                     <div className="prose prose-lg text-gray-700 max-w-none">
                         <p className="mb-6 leading-relaxed">
                             For property managers targeting family vacations and larger group stays, Vrbo (part of the Expedia Group) is a dominant platform. But understanding <strong>how much Vrbo charges hosts</strong> is vital for setting competitive rates. Vrbo offers hosts a choice between two distinct fee structures: the Pay-per-Booking model and the Annual Subscription model.
+                        </p>
+                        
+                        <p className="mb-6 leading-relaxed">
+                            If you're listing on multiple platforms to maximize your occupancy, make sure to cross-check your margins with our <Link href="/" className="text-blue-600 font-bold hover:underline transition-colors">Airbnb Host Fee Calculator</Link> and our <Link href="/booking-com-calculator" className="text-blue-600 font-bold hover:underline transition-colors">Booking.com Commission Calculator</Link>.
                         </p>
 
                         <h3 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">The Pay-per-Booking Fee Breakdown</h3>
@@ -234,7 +369,6 @@ export default function VrboCalculator() {
                     </div>
                 </div>
             </section>
-
         </div>
     );
 }
