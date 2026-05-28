@@ -103,7 +103,7 @@ export default function Home() {
     <div className="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
       <Head>
         {/* NEW HIGH-CTR SEO TITLE AND META DESCRIPTION */}
-        <title>Airbnb Host Fee Calculator 2026 | Calculate 15.5% Net Payouts</title>
+        <title>Airbnb Host Fee Calculator 2026 | Free Net Payout Estimator</title>
         <meta name="description" content="Stop losing money to hidden platform fees. Use our free Airbnb Host Fee Calculator to instantly find your exact net payout, 15.5% margins, and true ROI." />
         <meta name="keywords" content="Airbnb host fees calculator, Airbnb host fee calculator, airbnb arbitrage calculator, airbnb payout calculator,airbnb fee calculator, airbnb profit margin, how much does airbnb charge hosts, airbnb net payout calculator, airbnb property management fee calculator, airbnb simplified pricing, airbnb host tax" />
         <meta name="google-site-verification" content="1HPgt5oCJPaVXDkCPMtlbyOJjYw-cu1KTLN3jXPH_5E" />
@@ -113,14 +113,14 @@ export default function Home() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.rentcalo.com" />
-        <meta property="og:title" content="Airbnb Host Fee Calculator 2026 | Calculate 15.5% Net Payouts" />
+        <meta property="og:title" content="Airbnb Host Fee Calculator 2026 | Free Net Payout Estimator" />
         <meta property="og:description" content="Stop losing money to hidden platform fees. Use our free Airbnb Host Fee Calculator to instantly find your exact net payout, 15.5% margins, and true ROI." />
         <meta property="og:image" content="https://www.rentcalo.com/og-image.jpg" />
 
         {/* Twitter / X */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://www.rentcalo.com" />
-        <meta name="twitter:title" content="Airbnb Host Fee Calculator 2026 | Calculate 15.5% Net Payouts" />
+        <meta name="twitter:title" content="Airbnb Host Fee Calculator 2026 | Free Net Payout Estimator" />
         <meta name="twitter:description" content="Stop losing money to hidden platform fees. Use our free Airbnb Host Fee Calculator to instantly find your exact net payout, 15.5% margins, and true ROI." />
         <meta name="twitter:image" content="https://www.rentcalo.com/og-image.jpg" />
 
