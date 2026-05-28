@@ -130,7 +130,15 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
+        {/* Optimized FontAwesome Load (Prevents Render-Blocking) */}
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onLoad={(e) => { e.currentTarget.media = 'all'; }} />
+        <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        </noscript>
+        
+        {/* Preload FontAwesome Font File to break the dependency chain */}
+        <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         
         {/* Schema Markup Injection */}
         <script
@@ -264,7 +272,7 @@ export default function Home() {
             </div>
 
             <div className="bg-blue-50 p-6 rounded-2xl shadow-sm border border-blue-100 mt-2">
-              <h4 className="font-bold text-blue-900 mb-2"><i className="fa-solid fa-lightbulb text-yellow-500 mr-2"></i>Expert Host Tip</h4>
+              <h3 className="font-bold text-blue-900 mb-2"><i className="fa-solid fa-lightbulb text-yellow-500 mr-2"></i>Expert Host Tip</h3>
               <p className="text-sm text-blue-800 leading-relaxed">
                 To maximize your position in Airbnb's new total-price display algorithm, consider absorbing the cleaning fee into your nightly rate. This prevents sticker shock and often leads to higher booking conversion rates under the 15.5% model.
               </p>
@@ -284,9 +292,9 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Card 1: 15.5% Fee Guide */}
             <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
-              <img src="https://plus.unsplash.com/premium_photo-1663075988872-72d05e3aaa66?q=80&w=1171&auto=format&fit=crop" alt="Airbnb 15.5% fee guide" className="w-full h-48 object-cover" />
+              <img src="https://plus.unsplash.com/premium_photo-1663075988872-72d05e3aaa66?q=80&w=1171&auto=format&fit=crop" alt="Airbnb 15.5% fee guide" width="400" height="192" className="w-full h-48 object-cover" />
               <div className="p-6 flex flex-col flex-grow">
-                <span className="text-blue-600 text-xs font-bold uppercase tracking-wider">Pricing Strategy</span>
+                <span className="text-blue-700 text-xs font-bold uppercase tracking-wider">Pricing Strategy</span>
                 <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">Master the 15.5% Simplified Pricing Model</h3>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-3">Stop losing money to hidden fees. Discover how to master the new pricing model and calculate your exact net payout.</p>
                 <div className="mt-auto">
@@ -299,9 +307,9 @@ export default function Home() {
 
             {/* Card 2: Arbitrage Start Guide */}
             <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
-              <img src="https://images.unsplash.com/photo-1544143086-828f66ac3945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Start Airbnb Arbitrage" className="w-full h-48 object-cover" />
+              <img src="https://images.unsplash.com/photo-1544143086-828f66ac3945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Start Airbnb Arbitrage" width="400" height="192" className="w-full h-48 object-cover" />
               <div className="p-6 flex flex-col flex-grow">
-                <span className="text-green-600 text-xs font-bold uppercase tracking-wider">Investing</span>
+                <span className="text-green-700 text-xs font-bold uppercase tracking-wider">Investing</span>
                 <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">How to Start Airbnb Arbitrage with Just $5,000</h3>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-3">The scrappy minimum guide to launching your first rental arbitrage unit without buying property or taking massive loans.</p>
                 <div className="mt-auto">
@@ -314,9 +322,9 @@ export default function Home() {
 
             {/* Card 3: Liability Insurance Guide */}
             <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
-              <img src="https://images.unsplash.com/photo-1637763723578-79a4ca9225f7?q=80&w=1171&auto=format&fit=crop" alt="Airbnb liability insurance" className="w-full h-48 object-cover" />
+              <img src="https://images.unsplash.com/photo-1637763723578-79a4ca9225f7?q=80&w=1171&auto=format&fit=crop" alt="Airbnb liability insurance" width="400" height="192" className="w-full h-48 object-cover" />
               <div className="p-6 flex flex-col flex-grow">
-                <span className="text-red-600 text-xs font-bold uppercase tracking-wider">Asset Protection</span>
+                <span className="text-red-700 text-xs font-bold uppercase tracking-wider">Asset Protection</span>
                 <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">STR Commercial Liability Insurance Guide</h3>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-3">Stop risking your personal assets. Why smart hosts never rely on platform protection alone and how to insure properly.</p>
                 <div className="mt-auto">
