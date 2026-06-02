@@ -72,10 +72,18 @@ export default function VrboCalculator() {
                 "mainEntity": [
                     {
                         "@type": "Question",
+                        "name": "How much does Vrbo charge hosts?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Under the standard Pay-per-Booking model, Vrbo charges hosts an 8% total fee. This is broken down into a 5% platform commission and a 3% payment processing fee."
+                        }
+                    },
+                    {
+                        "@type": "Question",
                         "name": "When should I switch to the Vrbo Annual Subscription?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "The break-even point is roughly $10,000 in gross annual revenue. If your property generates $10,000 or more per year specifically on the Vrbo platform, paying the $499 upfront will save you money compared to giving up 5% on every single booking."
+                            "text": "The mathematical break-even point is roughly $10,000 in gross annual revenue. If your property generates $10,000 or more per year strictly on Vrbo, paying the $499 upfront subscription will save you money."
                         }
                     },
                     {
@@ -83,7 +91,7 @@ export default function VrboCalculator() {
                         "name": "Does Vrbo charge commission on taxes?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Vrbo does not charge the 5% commission on taxes or refundable damage deposits. However, the 3% payment processing fee does apply to the total amount processed, which includes taxes and deposits."
+                            "text": "Vrbo does not charge the 5% commission on taxes or refundable damage deposits. However, the 3% payment processing fee does apply to the total amount processed, which includes those taxes and deposits."
                         }
                     },
                     {
@@ -91,7 +99,15 @@ export default function VrboCalculator() {
                         "name": "Vrbo vs Airbnb Fees: Which is cheaper for hosts?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Generally, Vrbo is cheaper for the host. Vrbo takes around 8% total, whereas Airbnb's standard host-only fee is 15.5%. However, Airbnb typically provides a much higher volume of bookings for most urban and smaller properties."
+                            "text": "Generally, Vrbo is much cheaper for the host. Vrbo takes around 8% total, whereas Airbnb's standard host-only fee is 15.5%. However, Airbnb typically provides a much higher volume of overall bookings."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Are cleaning fees included in the Vrbo commission calculation?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes. The 5% commission fee applies to the total rental amount plus any mandatory fees you charge, including cleaning fees and pet fees."
                         }
                     }
                 ]
@@ -105,7 +121,7 @@ export default function VrboCalculator() {
                 {/* HIGH-CTR SEO TITLE AND META DESCRIPTION */}
                 <title>Free Vrbo Host Fee Calculator 2026 | Calculate 8% Net Payouts</title>
                 <meta name="description" content="Stop guessing your true Vrbo profits. Instantly calculate the exact 5% commission, 3% payment fees, and true net payout to maximize your ROI." />
-                <meta name="keywords" content="vrbo host fee calculator, how much does vrbo charge hosts, vrbo commission rate, vrbo pay per booking fee, vrbo vs airbnb fees, vrbo calculator, vrbo payout calculator" />
+                <meta name="keywords" content="vrbo host fees calculator, vrbo host fee calculator, how much does vrbo charge hosts, vrbo commission rate, vrbo pay per booking fee, vrbo vs airbnb fees, vrbo calculator, vrbo payout calculator" />
                 <link rel="canonical" href="https://www.rentcalo.com/vrbo-calculator" />
                 
                 {/* Open Graph / Facebook */}
@@ -122,13 +138,7 @@ export default function VrboCalculator() {
                 <meta name="twitter:description" content="Stop guessing your true Vrbo profits. Instantly calculate the exact 5% commission, 3% payment fees, and true net payout." />
                 <meta name="twitter:image" content="https://www.rentcalo.com/og-image.jpg" />
 
-                {/* Optimized FontAwesome Load (Prevents Render-Blocking & Resolves Dependency Tree) */}
-                <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" />
-                <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onLoad={(e) => { e.currentTarget.media = 'all'; }} />
-                <noscript>
-                  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-                </noscript>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
                 
                 {/* Schema Markup Injection */}
                 <script
@@ -140,7 +150,7 @@ export default function VrboCalculator() {
             {/* Main Calculator Section */}
             <main className="flex-grow container mx-auto px-4 py-8 mt-4 max-w-6xl">
                 <div className="text-center mb-10">
-                    <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mb-4 inline-block">Updated for 2026</span>
+                    <span className="bg-blue-100 text-blue-800 text-sm font-semibold px-3 py-1 rounded-full mb-4 inline-block tracking-wider uppercase">Updated for 2026</span>
                     <h1 className="text-4xl font-extrabold text-gray-900 mb-4">Vrbo Host Fee Calculator</h1>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">Instantly calculate your net payout under Vrbo's standard Pay-per-Booking model (5% commission + 3% payment processing).</p>
                 </div>
@@ -251,7 +261,6 @@ export default function VrboCalculator() {
 
                         {/* Expert Host Tip Section for Vrbo */}
                         <div className="bg-blue-50 p-6 rounded-2xl shadow-sm border border-blue-100 mt-2">
-                            {/* Accessibility Fix: Changed h4 to h3 */}
                             <h3 className="font-bold text-blue-900 mb-2">
                                 <i className="fa-solid fa-lightbulb text-yellow-500 mr-2"></i>Expert Host Tip: The $10k Rule
                             </h3>
@@ -261,110 +270,178 @@ export default function VrboCalculator() {
                         </div>
                     </div>
                 </div>
+
+                {/* Disclaimer */}
+                <div className="mt-8 mb-4 p-4 bg-amber-50 border-l-4 border-amber-500 rounded-r-xl text-xs text-amber-900 font-medium max-w-6xl mx-auto shadow-sm">
+                    <strong>Financial Intelligence Disclaimer:</strong> Rentcalo provides independent underwriting matrices and automated platform logic for educational estimation purposes only. All calculations exclude localized dynamic occupancy tax brackets or refundable damage deposits. Cross-verify results with your official Expedia Group / Vrbo dashboard.
+                </div>
             </main>
 
-            {/* Blog Post Cards Section for Internal Linking */}
-            <section id="latest-articles" className="bg-white py-16 border-t border-gray-200 mt-8">
+            {/* 🚀 SEMANTIC INTERNAL LINKING GRID (THE HUB) - Includes all 6 Calculators */}
+            <section className="bg-gradient-to-b from-gray-50 to-white py-16 border-t border-gray-200">
                 <div className="container mx-auto px-4 max-w-6xl">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest Airbnb & VRBO Host Strategies</h2>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">Expert insights to help you navigate algorithm changes, protect your margins, and scale your short-term rental portfolio.</p>
+                        <h2 className="text-3xl font-extrabold text-gray-900 mb-4">Complete Your Short-Term Rental Underwriting</h2>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">Analyze other OTA platforms, compare leasing strategies, and secure your profit margins with our enterprise-grade toolkit.</p>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
-                            <img src="https://plus.unsplash.com/premium_photo-1663075988872-72d05e3aaa66?q=80&w=1171&auto=format&fit=crop" alt="Airbnb 15.5% fee guide" width="400" height="192" className="w-full h-48 object-cover" />
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="text-blue-700 text-xs font-bold uppercase tracking-wider">Pricing Strategy</span>
-                                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">Master the 15.5% Simplified Pricing Model</h3>
-                                <p className="text-gray-600 text-sm mb-4 line-clamp-3">Stop losing money to hidden fees. Discover how to master the new pricing model and calculate your exact net payout.</p>
-                                <div className="mt-auto">
-                                    <Link href="/blog/airbnb-15-5-percent-fee-simplified-pricing-guide-2026" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
-                                        Read Full Guide &rarr;
-                                    </Link>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {/* 1. Airbnb Calculator */}
+                        <Link href="/" className="group p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-red-300 transition-all duration-300 transform hover:-translate-y-1">
+                            <div className="flex items-center mb-4">
+                                <div className="bg-red-50 p-3 rounded-xl text-red-500 group-hover:bg-red-500 group-hover:text-white transition-colors">
+                                    <i className="fa-brands fa-airbnb text-xl"></i>
                                 </div>
+                                <h3 className="font-bold text-gray-900 ml-4 group-hover:text-red-500 transition-colors">Airbnb Fee Calculator</h3>
                             </div>
-                        </div>
+                            <p className="text-sm text-gray-500">Instantly calculate exact net payouts under the mandatory 15.5% simplified pricing model.</p>
+                        </Link>
 
-                        <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
-                            <img src="https://images.unsplash.com/photo-1544143086-828f66ac3945?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080" alt="Start Airbnb Arbitrage" width="400" height="192" className="w-full h-48 object-cover" />
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="text-green-700 text-xs font-bold uppercase tracking-wider">Investing</span>
-                                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">How to Start Airbnb Arbitrage with Just $5,000</h3>
-                                <p className="text-gray-600 text-sm mb-4 line-clamp-3">The scrappy minimum guide to launching your first rental arbitrage unit without buying property or taking massive loans.</p>
-                                <div className="mt-auto">
-                                    <Link href="/blog/how-to-start-airbnb-arbitrage-with-just-dollar5000" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
-                                        Read Full Guide &rarr;
-                                    </Link>
+                        {/* 2. Booking.com Estimator */}
+                        <Link href="/booking-com-calculator" className="group p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-1">
+                            <div className="flex items-center mb-4">
+                                <div className="bg-blue-50 p-3 rounded-xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                                    <i className="fa-solid fa-globe text-xl"></i>
                                 </div>
+                                <h3 className="font-bold text-gray-900 ml-4 group-hover:text-blue-600 transition-colors">Booking.com Estimator</h3>
                             </div>
-                        </div>
+                            <p className="text-sm text-gray-500">Calculate standard 15% commissions and Payments by Booking credit card processing cuts instantly.</p>
+                        </Link>
 
-                        <div className="bg-gray-50 rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col">
-                            <img src="https://images.unsplash.com/photo-1637763723578-79a4ca9225f7?q=80&w=1171&auto=format&fit=crop" alt="Airbnb liability insurance" width="400" height="192" className="w-full h-48 object-cover" />
-                            <div className="p-6 flex flex-col flex-grow">
-                                <span className="text-red-700 text-xs font-bold uppercase tracking-wider">Asset Protection</span>
-                                <h3 className="text-xl font-bold text-gray-900 mt-2 mb-3">STR Commercial Liability Insurance Guide</h3>
-                                <p className="text-gray-600 text-sm mb-4 line-clamp-3">Stop risking your personal assets. Why smart hosts never rely on platform protection alone and how to insure properly.</p>
-                                <div className="mt-auto">
-                                    <Link href="/blog/short-term-rental-commercial-liability-lnsurance" className="text-blue-600 font-semibold hover:text-blue-800 transition-colors">
-                                        Read Full Guide &rarr;
-                                    </Link>
+                        {/* 3. Agoda Calculator (Replaced Vrbo card with Agoda since we are on the Vrbo page) */}
+                        <Link href="/agoda-calculator" className="group p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-orange-400 transition-all duration-300 transform hover:-translate-y-1">
+                            <div className="flex items-center mb-4">
+                                <div className="bg-orange-50 p-3 rounded-xl text-orange-600 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                                    <i className="fa-solid fa-plane-departure text-xl"></i>
                                 </div>
+                                <h3 className="font-bold text-gray-900 ml-4 group-hover:text-orange-600 transition-colors">Agoda Host Calculator</h3>
                             </div>
-                        </div>
+                            <p className="text-sm text-gray-500">Analyze the impact of Agoda VIP discounts and standard 15% commissions on your net revenue.</p>
+                        </Link>
+
+                        {/* 4. Arbitrage / ROI */}
+                        <Link href="/airbnb-arbitrage-calculator" className="group p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-indigo-400 transition-all duration-300 transform hover:-translate-y-1">
+                            <div className="flex items-center mb-4">
+                                <div className="bg-indigo-50 p-3 rounded-xl text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                                    <i className="fa-solid fa-chart-line text-xl"></i>
+                                </div>
+                                <h3 className="font-bold text-gray-900 ml-4 group-hover:text-indigo-600 transition-colors">Rental Arbitrage ROI</h3>
+                            </div>
+                            <p className="text-sm text-gray-500">Model corporate master leases, furnishing CapEx timelines, and find exact cash-on-cash metrics.</p>
+                        </Link>
+
+                        {/* 5. Glamping Simulator */}
+                        <Link href="/glamping-and-tiny-house-roi-calculator" className="group p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-amber-400 transition-all duration-300 transform hover:-translate-y-1">
+                            <div className="flex items-center mb-4">
+                                <div className="bg-amber-50 p-3 rounded-xl text-amber-600 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                                    <i className="fa-solid fa-campground text-xl"></i>
+                                </div>
+                                <h3 className="font-bold text-gray-900 ml-4 group-hover:text-amber-600 transition-colors">Glamping Simulator</h3>
+                            </div>
+                            <p className="text-sm text-gray-500">Model geodesic dome structures, off-grid utilities setup budgets, and cumulative payback curves.</p>
+                        </Link>
+
+                        {/* 6. STR vs LTR Analysis */}
+                        <Link href="/str-vs-ltr-calculator" className="group p-6 rounded-2xl bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-purple-400 transition-all duration-300 transform hover:-translate-y-1">
+                            <div className="flex items-center mb-4">
+                                <div className="bg-purple-50 p-3 rounded-xl text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                                    <i className="fa-solid fa-scale-balanced text-xl"></i>
+                                </div>
+                                <h3 className="font-bold text-gray-900 ml-4 group-hover:text-purple-600 transition-colors">STR vs LTR Analysis</h3>
+                            </div>
+                            <p className="text-sm text-gray-500">Compare short-term occupancy yield targets against guaranteed long-term lease cash flows.</p>
+                        </Link>
                     </div>
                 </div>
             </section>
 
-            {/* SEO Content Section */}
-            <section id="how-it-works" className="bg-white py-16 border-t border-gray-200">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <h2 className="text-3xl font-bold mb-6 text-gray-900">How to Calculate Vrbo Host Fees in 2026</h2>
-                    
-                    <div className="prose prose-lg text-gray-700 max-w-none">
-                        <p className="mb-6 leading-relaxed">
-                            For property managers targeting family vacations and larger group stays, Vrbo (part of the Expedia Group) is a dominant platform. But understanding <strong>how much Vrbo charges hosts</strong> is vital for setting competitive rates. Vrbo offers hosts a choice between two distinct fee structures: the Pay-per-Booking model and the Annual Subscription model.
-                        </p>
+            {/* 📚 EXPANDED HUMANIZED SEO CONTENT SECTION (1300+ Words Equivalent / Deep Coverage) */}
+            <section id="how-it-works" className="bg-gray-50 py-20 border-t border-gray-200">
+                <div className="container mx-auto px-4 max-w-5xl">
+                    <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+                        <h2 className="text-3xl md:text-4xl font-extrabold mb-8 text-gray-900 border-b pb-6">The Ultimate Guide to Understanding Vrbo Host Fees and Payouts in 2026</h2>
                         
-                        <p className="mb-6 leading-relaxed">
-                            If you're listing on multiple platforms to maximize your occupancy, make sure to cross-check your margins with our <Link href="/" className="text-blue-600 font-bold hover:underline transition-colors">Airbnb Host Fee Calculator</Link> and our <Link href="/booking-com-calculator" className="text-blue-600 font-bold hover:underline transition-colors">Booking.com Commission Calculator</Link>.
-                        </p>
+                        <div className="prose prose-lg text-gray-700 max-w-none">
+                            <p className="mb-6 leading-relaxed text-lg">
+                                If you are managing vacation rentals targeted at families, larger groups, or older demographics with a higher Average Daily Rate (ADR), listing on Vrbo (part of the Expedia Group) is an absolute must. However, properly underwriting your properties means you must deeply understand exactly how much the platform subtracts before the money ever hits your bank account. This is where a reliable, real-time <strong>vrbo host fees calculator</strong> becomes your most valuable financial tool.
+                            </p>
+                            
+                            <p className="mb-8 leading-relaxed">
+                                Unlike other platforms that force you into a single, rigid payment structure, Vrbo empowers property owners and managers by offering a choice between two very distinct fee models: the <strong>Pay-per-Booking Model</strong> and the <strong>Annual Subscription Model</strong>. Deciding which route to take can literally mean a difference of thousands of dollars in retained revenue at the end of the fiscal year. Let’s completely break down exactly how Vrbo host fees calculate, so you can stop guessing your margins and start running your short-term rental business like a true real estate enterprise.
+                            </p>
 
-                        <h3 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">The Pay-per-Booking Fee Breakdown</h3>
-                        <p className="mb-6 leading-relaxed">
-                            Most independent hosts opt for the Pay-per-Booking model, which involves zero upfront costs. Under this model, Vrbo's fee consists of two parts:
-                        </p>
-                        <ul className="list-disc pl-6 mb-6 text-gray-700">
-                            <li><strong>5% Commission Fee:</strong> This is calculated based on the rental amount and any additional mandatory fees you charge, such as cleaning or pet fees.</li>
-                            <li><strong>3% Payment Processing Fee:</strong> Because guests pay through Vrbo's secure payment platform, a 3% credit card processing fee is applied to the <em>total</em> transaction amount (including taxes).</li>
-                        </ul>
-                        <p className="mb-6 leading-relaxed">
-                            Combined, you can expect about an <strong>8% total deduction</strong> from your gross bookings. Our <strong>Vrbo host fee calculator</strong> automatically separates these to give you an accurate net payout.
-                        </p>
+                            <h3 className="text-2xl font-bold mt-10 mb-4 text-gray-900 flex items-center">
+                                <i className="fa-solid fa-percent text-blue-500 mr-3"></i> Demystifying the Pay-per-Booking Fee Breakdown
+                            </h3>
+                            <p className="mb-4 leading-relaxed">
+                                The vast majority of independent hosts and new investors start with the Pay-per-Booking model because it requires zero upfront investment. It feels incredibly safe—if you don't get bookings, you don't pay anything. However, under this model, Vrbo's fee structure is actually broken down into two entirely separate, distinct charges:
+                            </p>
+                            <ul className="list-disc pl-6 mb-6 text-gray-700 space-y-2">
+                                <li><strong>The 5% Platform Commission:</strong> This fee is charged simply for using the Vrbo marketplace to acquire the guest. Crucially, this 5% is mathematically calculated on your <em>base rental amount</em> PLUS any mandatory fees you charge (such as cleaning fees and pet fees). </li>
+                                <li><strong>The 3% Payment Processing Fee:</strong> Because guests pay securely through Vrbo's integrated credit card processing system, a standard 3% merchant processing fee is applied. Unlike the platform commission, this 3% is charged on the <em>Total Transaction Amount</em>, which includes local taxes and even refundable damage deposits.</li>
+                            </ul>
+                            <p className="mb-6 leading-relaxed">
+                                When you combine these two elements together, you can generally expect a blended deduction of around <strong>8% from your gross bookings</strong>. However, because the percentages apply to slightly different pools of money (taxes vs. no taxes), attempting to do the math manually on a spreadsheet often leads to critical errors. This is exactly why utilizing an automated <strong>vrbo host fees calculator</strong> is necessary to ensure your expected cash flow perfectly matches your actual bank deposits.
+                            </p>
 
-                        <h3 className="text-2xl font-semibold mt-8 mb-4 text-gray-800">The $499 Annual Subscription Model</h3>
-                        <p className="mb-6 leading-relaxed">
-                            If you run a high-performing property, the Pay-per-Booking model can become expensive. Vrbo offers an alternative: pay a flat $499 annual fee, and you will pay <strong>0% commission</strong> on your bookings for the entire year. You will, however, still be responsible for the 3% payment processing fee on each transaction.
-                        </p>
-
-                        <h3 className="text-3xl mb-6 text-gray-900 text-left"><i className="fa-solid fa-circle-question text-blue-500 mr-3"></i>Frequently Asked Questions</h3>
-                        
-                        <div className="space-y-6">
-                            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
-                                <h4 className="text-lg font-bold text-gray-900 mb-2">When should I switch to the Vrbo Annual Subscription?</h4>
-                                <p className="text-gray-600">The break-even point is roughly $10,000 in gross annual revenue. If your property generates $10,000 or more per year <em>specifically on the Vrbo platform</em>, paying the $499 upfront will save you money compared to giving up 5% on every single booking.</p>
+                            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl my-10">
+                                <h4 className="text-xl font-bold text-blue-900 mb-2">The Golden Rule: The $10,000 Threshold</h4>
+                                <p className="text-blue-800 m-0 leading-relaxed">
+                                    If your property is a high-performer, continuously paying 5% on every single booking becomes incredibly inefficient. Vrbo offers a flat <strong>$499 Annual Subscription</strong>, which completely eliminates the 5% commission for a full 12 months (you will still only pay the 3% credit card fee). Mathematically, the break-even point is exactly $10,000 in gross annual revenue. If you project making more than $10k on Vrbo this year, buy the subscription immediately.
+                                </p>
                             </div>
 
-                            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
-                                <h4 className="text-lg font-bold text-gray-900 mb-2">Does Vrbo charge commission on taxes?</h4>
-                                <p className="text-gray-600">Vrbo does <strong>not</strong> charge the 5% commission on taxes or refundable damage deposits. However, the 3% payment processing fee <strong>does</strong> apply to the total amount processed, which includes taxes and deposits.</p>
+                            <h3 className="text-2xl font-bold mt-10 mb-4 text-gray-900 flex items-center">
+                                <i className="fa-solid fa-scale-unbalanced text-indigo-500 mr-3"></i> Vrbo vs. Airbnb: Which Platform is Actually Cheaper?
+                            </h3>
+                            <p className="mb-4 leading-relaxed">
+                                When investors rigorously analyze their operating expenses (OpEx), a very common question arises: <em>"Which platform actually takes a bigger cut?"</em> From a pure host-expense perspective, Vrbo is significantly cheaper. As we established, Vrbo takes roughly 8% total under the per-booking model. In stark contrast, Airbnb’s mandatory simplified pricing model (which almost all software-connected hosts must use today) takes a massive 15.5% directly from the host.
+                            </p>
+                            <p className="mb-6 leading-relaxed">
+                                So, why doesn't everyone just abandon Airbnb and use Vrbo? It fundamentally comes down to market share and search volume. Airbnb commands a massive portion of urban travel, couples retreats, and shorter weekend stays. Vrbo traditionally dominates in leisure destinations—think beach houses, ski cabins, and large multi-generational family retreats. Smart investors don’t choose one over the other; they employ a multi-channel distribution strategy. They list on both platforms, utilizing dynamic pricing software to push the base rates higher on Airbnb to offset the 15.5% fee, while keeping Vrbo rates slightly lower to capitalize on the highly favorable 8% fee structure.
+                            </p>
+
+                            <h3 className="text-2xl font-bold mt-10 mb-4 text-gray-900 flex items-center">
+                                <i className="fa-solid fa-file-invoice-dollar text-emerald-500 mr-3"></i> The Impact of Property Management Margins
+                            </h3>
+                            <p className="mb-4 leading-relaxed">
+                                If you are out-of-state investing or actively utilizing the rental arbitrage model, you might be employing a full-service property management company to handle the day-to-day operations. When underwriting your real estate deal, it is absolutely critical to understand the hierarchy of these fees. 
+                            </p>
+                            <p className="mb-8 leading-relaxed">
+                                Most professional property managers charge anywhere between 15% to 25%. This fee is almost always calculated from the <strong>Gross Booking Value</strong>, <em>before</em> Vrbo takes its 8% cut. This means if you have a $2,000 reservation, a 20% manager takes $400, and Vrbo takes roughly $160. Suddenly, you have surrendered nearly 30% of your revenue before paying the mortgage, utilities, or HOA fees. Properly modeling these intricate layers of expenses using our calculator is the only way to genuinely safeguard your Net Operating Income (NOI).
+                            </p>
+
+                            <hr className="border-gray-200 my-12" />
+
+                            <h3 className="text-3xl font-extrabold mb-8 text-gray-900 text-center"><i className="fa-solid fa-circle-question text-blue-500 mr-3"></i>Frequently Asked Questions</h3>
+                            
+                            <div className="space-y-6">
+                                <div className="bg-gray-50 hover:bg-white transition-colors p-6 rounded-2xl border border-gray-200 shadow-sm">
+                                    <h4 className="text-lg font-bold text-gray-900 mb-2">How much does Vrbo charge hosts overall?</h4>
+                                    <p className="text-gray-600 leading-relaxed">Under the standard Pay-per-Booking model, the total deduction is usually around 8%. This consists of a 5% platform commission to list on the site and a 3% payment processing fee to securely handle the guest's credit card transaction.</p>
+                                </div>
+
+                                <div className="bg-gray-50 hover:bg-white transition-colors p-6 rounded-2xl border border-gray-200 shadow-sm">
+                                    <h4 className="text-lg font-bold text-gray-900 mb-2">Are cleaning fees included in the Vrbo commission calculation?</h4>
+                                    <p className="text-gray-600 leading-relaxed">Yes. The 5% commission applies to the total rental amount plus any mandatory fees you charge. This means Vrbo takes 5% of your nightly rate, your cleaning fee, and any extra pet fees you have configured in your host dashboard.</p>
+                                </div>
+
+                                <div className="bg-gray-50 hover:bg-white transition-colors p-6 rounded-2xl border border-gray-200 shadow-sm">
+                                    <h4 className="text-lg font-bold text-gray-900 mb-2">Does Vrbo charge commission on local taxes?</h4>
+                                    <p className="text-gray-600 leading-relaxed">No, Vrbo does <strong>not</strong> charge the 5% commission on collected taxes or refundable damage deposits. However, because those funds still must pass through their merchant system, the 3% payment processing fee <strong>does</strong> apply to the total amount processed (including the taxes).</p>
+                                </div>
+
+                                <div className="bg-gray-50 hover:bg-white transition-colors p-6 rounded-2xl border border-gray-200 shadow-sm">
+                                    <h4 className="text-lg font-bold text-gray-900 mb-2">What happens if a guest cancels? Do I still pay the fee?</h4>
+                                    <p className="text-gray-600 leading-relaxed">If a guest cancels and receives a 100% full refund according to your structured cancellation policy, Vrbo refunds their service fee and you are not charged the commission or the payment processing fee. If you offer a partial refund, the fees apply only to the portion of the money you keep.</p>
+                                </div>
+
+                                <div className="bg-gray-50 hover:bg-white transition-colors p-6 rounded-2xl border border-gray-200 shadow-sm">
+                                    <h4 className="text-lg font-bold text-gray-900 mb-2">Can I pass the credit card processing fee to the guest?</h4>
+                                    <p className="text-gray-600 leading-relaxed">No. Under modern OTA (Online Travel Agency) structures, the 3% payment processing fee is a strict cost of doing business for the host. You cannot add a separate line item at checkout to charge the guest for credit card fees. You must logically bake this cost into your nightly base rate.</p>
+                                </div>
                             </div>
 
-                            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm">
-                                <h4 className="text-lg font-bold text-gray-900 mb-2">Vrbo vs Airbnb Fees: Which is cheaper for hosts?</h4>
-                                <p className="text-gray-600">Generally, Vrbo is cheaper for the host. Vrbo takes around 8% total, whereas Airbnb's standard host-only fee is 15.5%. However, Airbnb typically provides a much higher volume of bookings for most urban and smaller properties.</p>
-                            </div>
                         </div>
                     </div>
                 </div>
